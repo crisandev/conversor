@@ -7,6 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -18,6 +21,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    Button currentBtn;
     @FXML
     private Button btnUno;
 
@@ -35,24 +39,30 @@ public class MainController implements Initializable {
 
     @FXML
     private GridPane bgSection;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
     @FXML
-    private void handleClick(ActionEvent e){
+    private void handleClick(ActionEvent e) {
 
-        if (e.getSource()== btnUno){
-            bgSection.setBackground(new Background(new BackgroundFill(Color.AQUA,  CornerRadii.EMPTY, Insets.EMPTY)));
-        }else if (e.getSource()== btnDos){
-            bgSection.setBackground(new Background(new BackgroundFill(Color.YELLOW,  CornerRadii.EMPTY, Insets.EMPTY)));
-        }else if (e.getSource()== btnTres){
-            bgSection.setBackground(new Background(new BackgroundFill(Color.WHITESMOKE,  CornerRadii.EMPTY, Insets.EMPTY)));
-        }else if (e.getSource()== btnCuatro){
-            bgSection.setBackground(new Background(new BackgroundFill(Color.VIOLET,  CornerRadii.EMPTY, Insets.EMPTY)));
-        }else if (e.getSource()== btnCinco){
-            bgSection.setBackground(new Background(new BackgroundFill(Color.STEELBLUE,  CornerRadii.EMPTY, Insets.EMPTY)));
+        if (e.getSource() == btnUno) {
+            bgSection.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
+        } else if (e.getSource() == btnDos) {
+            bgSection.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+        } else if (e.getSource() == btnTres) {
+            bgSection.setBackground(new Background(new BackgroundFill(Color.WHITESMOKE, CornerRadii.EMPTY, Insets.EMPTY)));
+        } else if (e.getSource() == btnCuatro) {
+            bgSection.setBackground(new Background(new BackgroundFill(Color.VIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+        } else if (e.getSource() == btnCinco) {
+            bgSection.setBackground(new Background(new BackgroundFill(Color.STEELBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
         }
+    }
+
+    @FXML
+    private void onMouseOver(MouseEvent me) {
+        currentBtn = (Button) me.getSource();
+        currentBtn.setBackground(new Background(new BackgroundFill(Color.rgb(51, 80, 113), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 }
