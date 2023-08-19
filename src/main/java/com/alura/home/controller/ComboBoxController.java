@@ -1,5 +1,6 @@
 package com.alura.home.controller;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.ComboBox;
@@ -9,6 +10,11 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 
 public class ComboBoxController {
+
+//    public void insertValuesComboBox(ComboBox<>){
+//        cbMonedas.setItems(FXCollections.observableArrayList("Cristian", "Juan"));
+//    }
+
     @FXML
     private void comboBoxStyling(ComboBox<String> comboBox) {
         comboBox.setCellFactory(param -> new ListCell<>() {

@@ -12,11 +12,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
-
+import java.util.Scanner;
 public class MainController implements Initializable {
-
     //CONTAINERS
     @FXML
     private Pane containerMonedas;
@@ -75,11 +77,13 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox<String> cbCambioMonedas;
 
+    MonedasController monedasController = new MonedasController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cbMonedas.setItems(FXCollections.observableArrayList("Cristian", "Juan"));
-        cbMonedas.getSelectionModel().select(0);
+        cbMonedas.setItems(FXCollections.observableArrayList(monedasController.insertComboBoxValues()));
+//        cbMonedas.setItems(FXCollections.observableArrayList("Cristian", "Juan"));
+//        cbMonedas.getSelectionModel().select(0);
 //        comboBoxMonedasStyling();
 //        comboBoxHover();
 
@@ -132,13 +136,14 @@ public class MainController implements Initializable {
 
 
     private void btnSelected() {
-        paintSelected(containerMonedas,btnMonedas);
-        paintSelected(containerTemperatura,btnTemperatura);
-        paintSelected(containerDistancias,btnDistancia);
-        paintSelected(containerPeso,btnPeso);
-        paintSelected(containerTiempo,btnTiempo);
+        paintSelected(containerMonedas, btnMonedas);
+        paintSelected(containerTemperatura, btnTemperatura);
+        paintSelected(containerDistancias, btnDistancia);
+        paintSelected(containerPeso, btnPeso);
+        paintSelected(containerTiempo, btnTiempo);
     }
-    private void paintSelected(Pane container, Button btn){
+
+    private void paintSelected(Pane container, Button btn) {
         if (container.isVisible()) btn.setStyle("-fx-background-color: rgb(51, 80, 113);");
         else btn.setStyle("-fx-background-color: #1c2b45;");
     }
