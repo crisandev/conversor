@@ -11,12 +11,8 @@ import javafx.scene.paint.Color;
 
 public class ComboBoxController {
 
-//    public void insertValuesComboBox(ComboBox<>){
-//        cbMonedas.setItems(FXCollections.observableArrayList("Cristian", "Juan"));
-//    }
-
     @FXML
-    private void comboBoxStyling(ComboBox<String> comboBox) {
+    public static void comboBoxStyling(ComboBox<String> comboBox) {
         comboBox.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -24,7 +20,7 @@ public class ComboBoxController {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
                 setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), null, null)));
-                setStyle("-fx-font-size: 18px;");
+                setStyle("-fx-font-size: 17px;");
                 setCursor(Cursor.HAND);
             }
         });
@@ -41,9 +37,8 @@ public class ComboBoxController {
         });
     }
 
-
     @FXML
-    private void comboBoxHover(ComboBox<String> comboBox) {
+    public static void comboBoxHover(ComboBox<String> comboBox) {
         comboBox.setOnMouseEntered(event -> comboBox.setButtonCell(new ListCell<String>() {
             @Override
             protected void updateItem(String item, boolean empty) {

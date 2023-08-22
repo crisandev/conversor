@@ -12,12 +12,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import java.net.HttpURLConnection;
+
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Scanner;
+
 public class MainController implements Initializable {
     //CONTAINERS
     @FXML
@@ -77,16 +75,23 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox<String> cbCambioMonedas;
 
-    MonedasController monedasController = new MonedasController();
+    CurrenciesController monedasController = new CurrenciesController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cbMonedas.setItems(FXCollections.observableArrayList(monedasController.insertComboBoxValues()));
-//        cbMonedas.setItems(FXCollections.observableArrayList("Cristian", "Juan"));
-//        cbMonedas.getSelectionModel().select(0);
-//        comboBoxMonedasStyling();
-//        comboBoxHover();
+        currencyInitialize();
+    }
 
+    private void currencyInitialize(){
+        cbMonedas.setItems(FXCollections.observableArrayList(monedasController.insertComboBoxValues()));
+        cbMonedas.getSelectionModel().select("SELECT A CURRENCY");
+        ComboBoxController.comboBoxStyling(cbMonedas);
+        ComboBoxController.comboBoxHover(cbMonedas);
+
+        cbCambioMonedas.setItems(FXCollections.observableArrayList(monedasController.insertComboBoxValues()));
+        cbCambioMonedas.getSelectionModel().select("SELECT A CURRENCY");
+        ComboBoxController.comboBoxStyling(cbCambioMonedas);
+        ComboBoxController.comboBoxHover(cbCambioMonedas);
     }
 
     @FXML
