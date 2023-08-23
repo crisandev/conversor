@@ -1,7 +1,5 @@
 package com.alura.home.api;
-
 import com.alura.home.util.Language;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
@@ -41,6 +39,4 @@ public class CurrenciesAPI {
         String converionURL = API + CONVERSION_REQUEST + API_KEY + "&from=" + convertFrom + "&to=" + convertTo + "&amount=" + amount + "&format=json";
         return apiRequest(converionURL);
     }
-
-
 }

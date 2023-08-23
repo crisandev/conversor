@@ -5,8 +5,8 @@ module com.alura.conversor {
 
     opens com.alura.home to javafx.fxml;
     exports com.alura.home;
-    exports com.alura.home.controller;
-    opens com.alura.home.controller to javafx.fxml;
+    exports com.alura.home.controllers;
+    opens com.alura.home.controllers to javafx.fxml;
     exports com.alura.home.api;
     opens com.alura.home.api to javafx.fxml;
     exports com.alura.home.converters;

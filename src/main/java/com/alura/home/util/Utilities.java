@@ -1,5 +1,11 @@
 package com.alura.home.util;
 
+import com.alura.home.controllers.ComboBoxController;
+import com.alura.home.controllers.CurrencyController;
+import com.alura.home.interfaces.Converter;
+import javafx.collections.FXCollections;
+import javafx.scene.control.ComboBox;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;

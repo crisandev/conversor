@@ -3,6 +3,7 @@ package com.alura.home.converters;
 import com.alura.home.api.CurrenciesAPI;
 import com.alura.home.interfaces.Converter;
 import com.alura.home.util.Utilities;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.*;
@@ -34,11 +35,13 @@ public class Currency implements Converter {
     public String convert(String convertFrom, String convertTo, String amount) {
         try {
             JSONObject json = new JSONObject(CurrenciesAPI.getConversionJSON(convertFrom, convertTo, amount));
-            System.out.println(json);
-            return null;
+            JSONObject rates =  json.getJSONObject("rates");
+            JSONObject currencyResult = rates.getJSONObject(convertTo);
+            String result = currencyResult.getString("rate_for_amount");
+            return result;
         } catch (Exception e) {
-            e.getMessage();
-            return null;
+            System.out.println(e.getMessage());
+            return "0.0";
         }
     }
 

@@ -1,75 +1,20 @@
-package com.alura.home.controller;
+package com.alura.home.controllers;
 
-import com.alura.home.converters.Currency;
+import com.alura.home.interfaces.Converter;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 
 public class ComboBoxController {
-//    @FXML
-//    private Label alertJustNumber;
-//    @FXML
-//    private Pane containerMonedas;
-//    @FXML
-//    private Pane containerTemperatura;
-//    @FXML
-//    private Pane containerPeso;
-//    @FXML
-//    private Pane containerDistancias;
-//    @FXML
-//    private Pane containerTiempo;
-//    @FXML
-//    private Pane sidebar;
-//    @FXML
-//    private AnchorPane layout;
-//    @FXML
-//    private VBox sidebarContainer;
-//    @FXML
-//    private Text title;
-//    @FXML
-//    private Button currentBtn;
-//    @FXML
-//    private Button btnMonedas;
-//
-//    @FXML
-//    private Button btnTemperatura;
-//
-//    @FXML
-//    private Button btnPeso;
-//
-//    @FXML
-//    private Button btnDistancia;
-//
-//    @FXML
-//    private Button btnTiempo;
-//
-//    @FXML
-//    private Button btnConvertCurrency;
-//
-//    @FXML
-//    private Text titleMonedas;
-//
-//    @FXML
-//    private Text subtitleMonedas;
-//
-//    @FXML
-//    private TextField inputCurrency;
-//
-//    @FXML
-//    private TextField inputCurrencyResult;
-//
-//    @FXML
-//    private ComboBox<String> cbCurrencies = new ComboBox<>();
-//    @FXML
-//    private ComboBox<String> cbCurrenciesChange = new ComboBox<>();
-//
-//    private Currency currencyConverter = new Currency();
-//    private CurrencyController currencyController;
-//
+    public static void comboBoxInitializing(ComboBox<String> comboBox, Converter converter) {
+        comboBox.setItems(FXCollections.observableArrayList(converter.insertComboBoxValues()));
+        comboBox.getSelectionModel().select("SELECT A CURRENCY");
+        ComboBoxController.comboBoxStyling(comboBox);
+        ComboBoxController.comboBoxHover(comboBox);
+    }
 
     @FXML
     public static void comboBoxStyling(ComboBox<String> comboBox) {
