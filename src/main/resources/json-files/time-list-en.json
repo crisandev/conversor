@@ -1,0 +1,88 @@
+{
+  "units": [
+    {
+      "name": "Second",
+      "symbol": "s",
+      "conversions": {
+        "Minute": 0.0166667,
+        "Hour": 0.000277778,
+        "Day": 1.15741e-5,
+        "Week": 1.65344e-6,
+        "Month": 3.80518e-7,
+        "Year": 3.17098e-8
+      }
+    },
+    {
+      "name": "Minute",
+      "symbol": "min",
+      "conversions": {
+        "Second": 60,
+        "Hour": 0.0166667,
+        "Day": 0.000694444,
+        "Week": 9.9206e-5,
+        "Month": 2.28311e-5,
+        "Year": 1.90259e-6
+      }
+    },
+    {
+      "name": "Hour",
+      "symbol": "hr",
+      "conversions": {
+        "Second": 3600,
+        "Minute": 60,
+        "Day": 0.0416667,
+        "Week": 0.00595238,
+        "Month": 0.00136986,
+        "Year": 0.000114155
+      }
+    },
+    {
+      "name": "Day",
+      "symbol": "day",
+      "conversions": {
+        "Second": 86400,
+        "Minute": 1440,
+        "Hour": 24,
+        "Week": 0.142857,
+        "Month": 0.0328767,
+        "Year": 0.00273973
+      }
+    },
+    {
+      "name": "Week",
+      "symbol": "week",
+      "conversions": {
+        "Second": 604800,
+        "Minute": 10080,
+        "Hour": 168,
+        "Day": 7,
+        "Month": 0.229979,
+        "Year": 0.0191781
+      }
+    },
+    {
+      "name": "Month",
+      "symbol": "month",
+      "conversions": {
+        "Second": 2.628e+6,
+        "Minute": 43800,
+        "Hour": 730.001,
+        "Day": 30.4167,
+        "Week": 4.34524,
+        "Year": 0.0833333
+      }
+    },
+    {
+      "name": "Year",
+      "symbol": "year",
+      "conversions": {
+        "Second": 3.154e+7,
+        "Minute": 525600,
+        "Hour": 8760,
+        "Day": 365,
+        "Week": 52.1775,
+        "Month": 12
+      }
+    }
+  ]
+}

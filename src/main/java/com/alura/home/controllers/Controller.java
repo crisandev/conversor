@@ -11,9 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public abstract class Controller {
-
-    @FXML
-    private Label validationMessageWeight;
     @FXML
     private AnchorPane layout;
 
@@ -126,61 +123,61 @@ public abstract class Controller {
     private Button btnConvertWeight;
 
     @FXML
-    private Label alertJustNumber2;
+    private Label validationMessageWeight;
 
     @FXML
     private Pane containerDistance;
 
     @FXML
-    private Text titleMonedas3;
+    private Text titleDistance;
 
     @FXML
-    private Text subtitleMonedas3;
+    private Text subtitleDistance;
 
     @FXML
-    private TextField inputCurrency3;
+    private TextField inputDistance;
 
     @FXML
-    private TextField inputCurrencyResult3;
+    private TextField inputDistanceResult;
 
     @FXML
-    private ComboBox<String> cbCurrencies3;
+    private ComboBox<String> cbDistances;
 
     @FXML
-    private ComboBox<String> cbCurrenciesChange3;
+    private ComboBox<String> cbDistancesChange;
 
     @FXML
-    private Button btnConvertCurrency3;
+    private Button btnConvertDistance;
 
     @FXML
-    private Label alertJustNumber3;
+    private Label validationMessageDistance;
 
     @FXML
     private Pane containerTime;
 
     @FXML
-    private Text titleMonedas4;
+    private Text titleTime;
 
     @FXML
-    private Text subtitleMonedas4;
+    private Text subtitleTime;
 
     @FXML
-    private TextField inputCurrency4;
+    private TextField inputTime;
 
     @FXML
-    private TextField inputCurrencyResult4;
+    private TextField inputTimeResult;
 
     @FXML
-    private ComboBox<String> cbCurrencies4;
+    private ComboBox<String> cbTimes;
 
     @FXML
-    private ComboBox<String> cbCurrenciesChange4;
+    private ComboBox<String> cbTimesChange;
 
     @FXML
-    private Button btnConvertCurrency4;
+    private Button btnConvertTime;
 
     @FXML
-    private Label alertJustNumber4;
+    private Label validationMessageTime;
     private Button currentBtn;
     private TextField currentTextField;
 
@@ -197,13 +194,6 @@ public abstract class Controller {
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
-    public Label getValidationMessageWeight() {
-        return validationMessageWeight;
-    }
-
-    public void setValidationMessageWeight(Label validationMessageWeight) {
-        this.validationMessageWeight = validationMessageWeight;
-    }
 
     public AnchorPane getLayout() {
         return layout;
@@ -501,12 +491,12 @@ public abstract class Controller {
         this.btnConvertWeight = btnConvertWeight;
     }
 
-    public Label getAlertJustNumber2() {
-        return alertJustNumber2;
+    public Label getValidationMessageWeight() {
+        return validationMessageWeight;
     }
 
-    public void setAlertJustNumber2(Label alertJustNumber2) {
-        this.alertJustNumber2 = alertJustNumber2;
+    public void setValidationMessageWeight(Label validationMessageWeight) {
+        this.validationMessageWeight = validationMessageWeight;
     }
 
     public Pane getContainerDistance() {
@@ -517,68 +507,68 @@ public abstract class Controller {
         this.containerDistance = containerDistance;
     }
 
-    public Text getTitleMonedas3() {
-        return titleMonedas3;
+    public Text getTitleDistance() {
+        return titleDistance;
     }
 
-    public void setTitleMonedas3(Text titleMonedas3) {
-        this.titleMonedas3 = titleMonedas3;
+    public void setTitleDistance(Text titleDistance) {
+        this.titleDistance = titleDistance;
     }
 
-    public Text getSubtitleMonedas3() {
-        return subtitleMonedas3;
+    public Text getSubtitleDistance() {
+        return subtitleDistance;
     }
 
-    public void setSubtitleMonedas3(Text subtitleMonedas3) {
-        this.subtitleMonedas3 = subtitleMonedas3;
+    public void setSubtitleDistance(Text subtitleDistance) {
+        this.subtitleDistance = subtitleDistance;
     }
 
-    public TextField getInputCurrency3() {
-        return inputCurrency3;
+    public TextField getInputDistance() {
+        return inputDistance;
     }
 
-    public void setInputCurrency3(TextField inputCurrency3) {
-        this.inputCurrency3 = inputCurrency3;
+    public void setInputDistance(TextField inputDistance) {
+        this.inputDistance = inputDistance;
     }
 
-    public TextField getInputCurrencyResult3() {
-        return inputCurrencyResult3;
+    public TextField getInputDistanceResult() {
+        return inputDistanceResult;
     }
 
-    public void setInputCurrencyResult3(TextField inputCurrencyResult3) {
-        this.inputCurrencyResult3 = inputCurrencyResult3;
+    public void setInputDistanceResult(TextField inputDistanceResult) {
+        this.inputDistanceResult = inputDistanceResult;
     }
 
-    public ComboBox<String> getCbCurrencies3() {
-        return cbCurrencies3;
+    public ComboBox<String> getCbDistances() {
+        return cbDistances;
     }
 
-    public void setCbCurrencies3(ComboBox<String> cbCurrencies3) {
-        this.cbCurrencies3 = cbCurrencies3;
+    public void setCbDistances(ComboBox<String> cbDistances) {
+        this.cbDistances = cbDistances;
     }
 
-    public ComboBox<String> getCbCurrenciesChange3() {
-        return cbCurrenciesChange3;
+    public ComboBox<String> getCbDistancesChange() {
+        return cbDistancesChange;
     }
 
-    public void setCbCurrenciesChange3(ComboBox<String> cbCurrenciesChange3) {
-        this.cbCurrenciesChange3 = cbCurrenciesChange3;
+    public void setCbDistancesChange(ComboBox<String> cbDistancesChange) {
+        this.cbDistancesChange = cbDistancesChange;
     }
 
-    public Button getBtnConvertCurrency3() {
-        return btnConvertCurrency3;
+    public Button getBtnConvertDistance() {
+        return btnConvertDistance;
     }
 
-    public void setBtnConvertCurrency3(Button btnConvertCurrency3) {
-        this.btnConvertCurrency3 = btnConvertCurrency3;
+    public void setBtnConvertDistance(Button btnConvertDistance) {
+        this.btnConvertDistance = btnConvertDistance;
     }
 
-    public Label getAlertJustNumber3() {
-        return alertJustNumber3;
+    public Label getValidationMessageDistance() {
+        return validationMessageDistance;
     }
 
-    public void setAlertJustNumber3(Label alertJustNumber3) {
-        this.alertJustNumber3 = alertJustNumber3;
+    public void setValidationMessageDistance(Label validationMessageDistance) {
+        this.validationMessageDistance = validationMessageDistance;
     }
 
     public Pane getContainerTime() {
@@ -589,68 +579,68 @@ public abstract class Controller {
         this.containerTime = containerTime;
     }
 
-    public Text getTitleMonedas4() {
-        return titleMonedas4;
+    public Text getTitleTime() {
+        return titleTime;
     }
 
-    public void setTitleMonedas4(Text titleMonedas4) {
-        this.titleMonedas4 = titleMonedas4;
+    public void setTitleTime(Text titleTime) {
+        this.titleTime = titleTime;
     }
 
-    public Text getSubtitleMonedas4() {
-        return subtitleMonedas4;
+    public Text getSubtitleTime() {
+        return subtitleTime;
     }
 
-    public void setSubtitleMonedas4(Text subtitleMonedas4) {
-        this.subtitleMonedas4 = subtitleMonedas4;
+    public void setSubtitleTime(Text subtitleTime) {
+        this.subtitleTime = subtitleTime;
     }
 
-    public TextField getInputCurrency4() {
-        return inputCurrency4;
+    public TextField getInputTime() {
+        return inputTime;
     }
 
-    public void setInputCurrency4(TextField inputCurrency4) {
-        this.inputCurrency4 = inputCurrency4;
+    public void setInputTime(TextField inputTime) {
+        this.inputTime = inputTime;
     }
 
-    public TextField getInputCurrencyResult4() {
-        return inputCurrencyResult4;
+    public TextField getInputTimeResult() {
+        return inputTimeResult;
     }
 
-    public void setInputCurrencyResult4(TextField inputCurrencyResult4) {
-        this.inputCurrencyResult4 = inputCurrencyResult4;
+    public void setInputTimeResult(TextField inputTimeResult) {
+        this.inputTimeResult = inputTimeResult;
     }
 
-    public ComboBox<String> getCbCurrencies4() {
-        return cbCurrencies4;
+    public ComboBox<String> getCbTimes() {
+        return cbTimes;
     }
 
-    public void setCbCurrencies4(ComboBox<String> cbCurrencies4) {
-        this.cbCurrencies4 = cbCurrencies4;
+    public void setCbTimes(ComboBox<String> cbTimes) {
+        this.cbTimes = cbTimes;
     }
 
-    public ComboBox<String> getCbCurrenciesChange4() {
-        return cbCurrenciesChange4;
+    public ComboBox<String> getCbTimesChange() {
+        return cbTimesChange;
     }
 
-    public void setCbCurrenciesChange4(ComboBox<String> cbCurrenciesChange4) {
-        this.cbCurrenciesChange4 = cbCurrenciesChange4;
+    public void setCbTimesChange(ComboBox<String> cbTimesChange) {
+        this.cbTimesChange = cbTimesChange;
     }
 
-    public Button getBtnConvertCurrency4() {
-        return btnConvertCurrency4;
+    public Button getBtnConvertTime() {
+        return btnConvertTime;
     }
 
-    public void setBtnConvertCurrency4(Button btnConvertCurrency4) {
-        this.btnConvertCurrency4 = btnConvertCurrency4;
+    public void setBtnConvertTime(Button btnConvertTime) {
+        this.btnConvertTime = btnConvertTime;
     }
 
-    public Label getAlertJustNumber4() {
-        return alertJustNumber4;
+    public Label getValidationMessageTime() {
+        return validationMessageTime;
     }
 
-    public void setAlertJustNumber4(Label alertJustNumber4) {
-        this.alertJustNumber4 = alertJustNumber4;
+    public void setValidationMessageTime(Label validationMessageTime) {
+        this.validationMessageTime = validationMessageTime;
     }
 
     public Button getCurrentBtn() {

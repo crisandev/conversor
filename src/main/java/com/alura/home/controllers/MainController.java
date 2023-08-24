@@ -1,6 +1,5 @@
 package com.alura.home.controllers;
 
-import com.alura.home.api.WeightAPI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,20 +8,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.math.BigDecimal;
 import java.net.URL;
-import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainController extends Controller implements Initializable {
 
-    CurrencyController currencyController;
-    TemperatureController temperatureController;
-    WeightController weightController;
+    private CurrencyController currencyController;
+    private TemperatureController temperatureController;
+    private WeightController weightController;
+    private DistanceController distanceController;
+    private TimeController timeController;
 
     public MainController() {
     }
@@ -32,9 +28,13 @@ public class MainController extends Controller implements Initializable {
         currencyController = new CurrencyController(this);
         temperatureController = new TemperatureController(this);
         weightController = new WeightController(this);
+        distanceController = new DistanceController(this);
+        timeController = new TimeController(this);
         currencyController.init();
         temperatureController.init();
         weightController.init();
+        distanceController.init();
+        timeController.init();
 
 //        BigDecimal d = new BigDecimal(9.8421e+7);
 //        NumberFormat n = NumberFormat.getInstance(Locale.US);
@@ -71,6 +71,7 @@ public class MainController extends Controller implements Initializable {
             btnSelected();
         } else if (e.getSource() == getBtnTime()) {
             setContainerVisible(getContainerTime(), getContainerDistance(), getContainerWeight(), getContainerTemperature(), getContainerCurrency());
+            timeController.reset();
             btnSelected();
         }
     }
@@ -79,13 +80,33 @@ public class MainController extends Controller implements Initializable {
     public void onTextChanged(KeyEvent e) {
         setCurrentTextField((TextField) e.getSource());
         if (getCurrentTextField().getId().equalsIgnoreCase(getInputCurrency().getId())) {
-            currencyController.textChangedValidation(e);
-        } else if (getCurrentTextField().getId().equalsIgnoreCase(getInputTemperature().getId())) {
-            temperatureController.textChangedValidation(e);
-        } else if (getCurrentTextField().getId().equalsIgnoreCase(getInputWeight().getId())) {
-            weightController.textChangedValidation(e);
         }
     }
+
+    @FXML
+    public void onCurrencyTextChanged(KeyEvent e) {
+        currencyController.textChangedValidation(e);
+    }
+
+    @FXML
+    public void onTemperatureTextChanged(KeyEvent e) {
+        temperatureController.textChangedValidation(e);
+    }
+
+    @FXML
+    public void onWeightTextChanged(KeyEvent e) {
+        weightController.textChangedValidation(e);
+    }
+
+    @FXML
+    public void onDistanceTextChanged(KeyEvent e) {
+    }
+
+    @FXML
+    public void onTimeTextChanged(KeyEvent e) {
+        timeController.textChangedValidation(e);
+    }
+
 
     @FXML
     private void convertCurrency(ActionEvent e) {
@@ -100,6 +121,15 @@ public class MainController extends Controller implements Initializable {
     @FXML
     private void convertWeight(ActionEvent e) {
         weightController.conversionRequest();
+    }
+
+    @FXML
+    private void convertDistance(ActionEvent e) {
+    }
+
+    @FXML
+    private void convertTime(ActionEvent e) {
+        timeController.conversionRequest();
     }
 
 

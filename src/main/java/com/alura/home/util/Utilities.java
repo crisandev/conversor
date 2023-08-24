@@ -61,7 +61,12 @@ public class Utilities {
         List<String> list = new LinkedList<>();
         for (int i = 0; i < jsonArray.length(); i++) list.add(jsonArray.getJSONObject(i).getString("name"));
         list.sort(String::compareToIgnoreCase);
+        return list;
+    }
 
+    public static List<String> showTimeList(JSONArray jsonArray) throws Exception{
+        List<String> list = new LinkedList<>();
+        for (int i = 0; i < jsonArray.length(); i++) list.add(jsonArray.getJSONObject(i).getString("name"));
         return list;
     }
 }
