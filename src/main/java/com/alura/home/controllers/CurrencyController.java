@@ -39,21 +39,6 @@ public class CurrencyController extends Controller implements ConverterControlle
     @Override
     public boolean textChangedValidation(KeyEvent event) {
         return Utilities.validateText(mc.getInputCurrency(), mc.getValidationMessageCurrency(), mc.getBtnConvertCurrency());
-//        try {
-//            if (mc.getInputCurrency().getText().equalsIgnoreCase("")) throw new NullPointerException();
-//            Double.parseDouble(mc.getInputCurrency().getText());
-//            mc.getValidationMessageCurrency().setVisible(false);
-//            mc.getBtnConvertCurrency().setDisable(false);
-//            return true;
-//        } catch (NumberFormatException ex) {
-//            mc.getValidationMessageCurrency().setVisible(true);
-//            mc.getBtnConvertCurrency().setDisable(true);
-//            mc.getValidationMessageCurrency().setText("*Invalid input format");
-//        } catch (NullPointerException ex) {
-//            mc.getValidationMessageCurrency().setVisible(false);
-//            mc.getBtnConvertCurrency().setDisable(true);
-//        }
-//        return false;
     }
 
     public void conversionRequest() {
@@ -71,10 +56,7 @@ public class CurrencyController extends Controller implements ConverterControlle
 
             if (textChangedValidation(null)) {
                 Double result = currencyConverter.convert(convertFrom, convertTo, amount);
-                NumberFormat numFormat = NumberFormat.getInstance(Locale.US);
-                numFormat.setMaximumFractionDigits(2);
-                String formatResult = numFormat.format(result);
-                mc.getInputCurrencyResult().setText(formatResult);
+                Utilities.showResult(result, mc.getInputCurrencyResult(),2);
             } else {
                 mc.getInputCurrencyResult().setText("0.0");
             }

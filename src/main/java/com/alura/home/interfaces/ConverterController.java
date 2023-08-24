@@ -1,11 +1,12 @@
 package com.alura.home.interfaces;
 
+import com.alura.home.controllers.MainController;
 import javafx.scene.input.KeyEvent;
 
 public interface ConverterController {
-    void reset();
-
     void init();
+
+    void reset();
 
     boolean textChangedValidation(KeyEvent event);
 

@@ -4,11 +4,8 @@ import com.alura.home.api.CurrenciesAPI;
 import com.alura.home.interfaces.Converter;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
-import javafx.scene.control.Alert;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.net.NoRouteToHostException;
 import java.net.UnknownHostException;
 import java.util.*;
@@ -21,9 +18,10 @@ public class Currency implements Converter {
     public List<String> insertComboBoxValues() {
 
         try {
-            if (CurrenciesAPI.getCurrenciesJSON() == null) throw new NullPointerException("Ocurrió un error");
+            String currencies = CurrenciesAPI.getCurrenciesJSON();
+            if (currencies == null) throw new NullPointerException("Ocurrió un error");
 
-            JSONObject json = new JSONObject(CurrenciesAPI.getCurrenciesJSON());
+            JSONObject json = new JSONObject(currencies);
             JSONObject jsonCurrencies = json.getJSONObject("currencies");
 
             for (Object key : jsonCurrencies.names()) {
@@ -34,7 +32,7 @@ public class Currency implements Converter {
         } catch (Exception ex) {
             PopupWindow.errorMessage("An error occurred", "");
         }
-        return Utilities.showCountryCurrencies(currenciesHashMap);
+        return Utilities.showCurrenciesList(currenciesHashMap);
     }
 
     @Override

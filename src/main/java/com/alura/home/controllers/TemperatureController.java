@@ -9,6 +9,7 @@ import javafx.scene.input.KeyEvent;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Queue;
 
 public class TemperatureController extends Controller implements ConverterController {
     private final Temperature temperatureConverter = new Temperature();
@@ -38,23 +39,8 @@ public class TemperatureController extends Controller implements ConverterContro
 
 
     @Override
-    public boolean textChangedValidation(KeyEvent event) {
+    public boolean textChangedValidation(KeyEvent e) {
         return Utilities.validateText(mc.getInputTemperature(), mc.getValidationMessageTemperature(), mc.getBtnConvertTemperature());
-//        try {
-//            if (mc.getInputTemperature().getText().equalsIgnoreCase("")) throw new NullPointerException();
-//            Double.parseDouble(mc.getInputTemperature().getText());
-//            mc.getValidationMessageTemperature().setVisible(false);
-//            mc.getBtnConvertTemperature().setDisable(false);
-//            return true;
-//        } catch (NumberFormatException ex) {
-//            mc.getValidationMessageTemperature().setVisible(true);
-//            mc.getBtnConvertTemperature().setDisable(true);
-//            mc.getValidationMessageTemperature().setText("*Just number values are accepted");
-//        } catch (NullPointerException ex) {
-//            mc.getValidationMessageTemperature().setVisible(false);
-//            mc.getBtnConvertTemperature().setDisable(true);
-//        }
-//        return false;
     }
 
     @Override
@@ -66,16 +52,15 @@ public class TemperatureController extends Controller implements ConverterContro
         try {
             if (convertFrom.contains("SELECT"))
                 throw new IncorrectValueException("Select the origin scale to convert.");
-            if (convertTo.contains("SELECT"))
-                throw new IncorrectValueException("Select the destiny scale to convert.");
-
-            Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
-            NumberFormat numFormat = NumberFormat.getInstance(Locale.US);
-            numFormat.setMaximumFractionDigits(2);
-            String formatResult = numFormat.format(result);
-            mc.getInputTemperatureResult().setText(formatResult);
+            if (convertTo.contains("SELECT")) throw new IncorrectValueException("Select the destiny scale to convert.");
+            if (textChangedValidation(null)) {
+                Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
+                Utilities.showResult(result, mc.getInputTemperatureResult(),2);
+            } else {
+                mc.getInputTemperatureResult().setText("0.0");
+            }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("SELECT A CURRENCY is an incorrect value", ex.getMessage());
+            PopupWindow.alertMessage("SELECT A SCALE is an incorrect value", ex.getMessage());
         }
     }
 }
