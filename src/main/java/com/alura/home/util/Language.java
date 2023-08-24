@@ -1,10 +1,10 @@
 package com.alura.home.util;
 
+import com.alura.home.enums.Languages;
+
 public class Language {
 
-    public enum languages {ES, EN}
-
-    private static String lang = languages.EN.name();
+    private static String lang = Languages.EN.name();
 
     public static String getLang() {
         return lang;
@@ -12,8 +12,8 @@ public class Language {
 
 
     public static void setLang(String lang) throws Exception {
-        if (lang.equalsIgnoreCase(languages.ES.name())) Language.lang = languages.ES.name();
-        else if (lang.equalsIgnoreCase(languages.EN.name())) Language.lang = languages.EN.name();
+        if (lang.equalsIgnoreCase(Languages.ES.name())) Language.lang = Languages.ES.name();
+        else if (lang.equalsIgnoreCase(Languages.EN.name())) Language.lang = Languages.EN.name();
         else throw new Exception("We can't change to this language");
     }
 }

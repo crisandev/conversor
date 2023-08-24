@@ -3,17 +3,18 @@ package com.alura.home.controllers;
 import com.alura.home.interfaces.Converter;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 public class ComboBoxController {
-    public static void comboBoxInitializing(ComboBox<String> comboBox, Converter converter) {
-        comboBox.setItems(FXCollections.observableArrayList(converter.insertComboBoxValues()));
-        comboBox.getSelectionModel().select("SELECT A CURRENCY");
-        ComboBoxController.comboBoxStyling(comboBox);
-        ComboBoxController.comboBoxHover(comboBox);
+    public static void comboBoxInitializing(ComboBox<String> cb, Converter converter, String message) {
+        cb.setItems(FXCollections.observableArrayList(converter.insertComboBoxValues()));
+        cb.getSelectionModel().select(message);
+        ComboBoxController.comboBoxStyling(cb);
+        ComboBoxController.comboBoxHover(cb);
     }
 
     @FXML
@@ -24,7 +25,7 @@ public class ComboBoxController {
                 super.updateItem(item, empty);
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
-                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), null, null)));
+                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
                 setStyle("-fx-font-size: 17px;");
                 setCursor(Cursor.HAND);
             }
@@ -35,7 +36,7 @@ public class ComboBoxController {
             protected void updateItem(String item, boolean empty) {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
-                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), null, null)));
+                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
                 setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
                 setCursor(Cursor.HAND);
             }
@@ -50,7 +51,7 @@ public class ComboBoxController {
                 comboBox.setStyle("-fx-background-color: #151f35;" + "-fx-border-color: #0a1229;");
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
-                setBackground(new Background(new BackgroundFill(Color.web("#151f35"), null, null)));
+                setBackground(new Background(new BackgroundFill(Color.web("#151f35"), new CornerRadii(0), new Insets(-0.5))));
                 setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
             }
         }));
@@ -61,7 +62,7 @@ public class ComboBoxController {
                 comboBox.setStyle("-fx-background-color: #1b2942;" + "-fx-border-color: #0a1229;");
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
-                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), null, null)));
+                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
                 setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
             }
         }));

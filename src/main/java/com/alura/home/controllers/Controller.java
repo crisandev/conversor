@@ -6,11 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-public class Controller {
+public abstract class Controller {
     @FXML
     private VBox sidebarContainer;
 
@@ -66,7 +67,7 @@ public class Controller {
     private Button btnConvertCurrency;
 
     @FXML
-    private Label alertJustNumber;
+    private Label validationMessageCurrency;
 
     @FXML
     private Pane containerTemperature;
@@ -100,7 +101,26 @@ public class Controller {
 
     @FXML
     private Pane containerTime;
+
+    public Label getValidationMessageTemperature() {
+        return validationMessageTemperature;
+    }
+
+    @FXML
+    private Label validationMessageTemperature;
     private Button currentBtn;
+
+
+    private TextField currentTextField;
+
+    public TextField getCurrentTextField() {
+        return currentTextField;
+    }
+
+    public void setCurrentTextField(TextField currentTextField) {
+        this.currentTextField = currentTextField;
+    }
+
 
     public final Background setBgColor(int i, int i1, int i2) {
         return new Background(new BackgroundFill(Color.rgb(i, i1, i2), CornerRadii.EMPTY, Insets.EMPTY));
@@ -109,6 +129,8 @@ public class Controller {
     public final Background setBgColor(String color) {
         return new Background(new BackgroundFill(Color.web(color), CornerRadii.EMPTY, Insets.EMPTY));
     }
+
+
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
@@ -281,12 +303,12 @@ public class Controller {
         this.btnConvertCurrency = btnConvertCurrency;
     }
 
-    public Label getAlertJustNumber() {
-        return alertJustNumber;
+    public Label getValidationMessageCurrency() {
+        return this.validationMessageCurrency;
     }
 
-    public void setAlertJustNumber(Label alertJustNumber) {
-        this.alertJustNumber = alertJustNumber;
+    public void setValidationMessageCurrency(Label validationMessageCurrency) {
+        this.validationMessageCurrency = validationMessageCurrency;
     }
 
     public Pane getContainerTemperature() {

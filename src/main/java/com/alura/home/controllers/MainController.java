@@ -3,15 +3,11 @@ package com.alura.home.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +15,7 @@ import java.util.ResourceBundle;
 public class MainController extends Controller implements Initializable {
 
     CurrencyController currencyController;
+    TemperatureController temperatureController;
 
     public MainController() {
     }
@@ -26,13 +23,16 @@ public class MainController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         currencyController = new CurrencyController(this);
+        temperatureController = new TemperatureController(this);
         currencyController.init();
+        temperatureController.init();
+        paintSelected(getContainerCurrency(), getBtnCurrency());
     }
 
     @FXML
     public void onMouseOver(MouseEvent me) {
         setCurrentBtn((Button) me.getSource());
-        getCurrentBtn().setBackground(setBgColor(51, 80, 113));
+        getCurrentBtn().setBackground(setBgColor("#253c54"));
     }
 
     @FXML
@@ -40,9 +40,11 @@ public class MainController extends Controller implements Initializable {
         setCurrentBtn((Button) e.getSource());
         if (e.getSource() == getBtnCurrency()) {
             setContainerVisible(getContainerCurrency(), getContainerTemperature(), getContainerWeight(), getContainerDistance(), getContainerTime());
+            currencyController.reset();
             btnSelected();
         } else if (e.getSource() == getBtnTemperature()) {
             setContainerVisible(getContainerTemperature(), getContainerCurrency(), getContainerWeight(), getContainerDistance(), getContainerTime());
+            temperatureController.reset();
             btnSelected();
         } else if (e.getSource() == getBtnWeight()) {
             setContainerVisible(getContainerWeight(), getContainerTemperature(), getContainerCurrency(), getContainerDistance(), getContainerTime());
@@ -57,14 +59,25 @@ public class MainController extends Controller implements Initializable {
     }
 
     @FXML
-    private void onTextChange(KeyEvent event) {
-        currencyController.textChange(event);
+    public void onTextChanged(KeyEvent e) {
+        setCurrentTextField((TextField) e.getSource());
+        if (getCurrentTextField().getId().equalsIgnoreCase(getInputCurrency().getId())) {
+            currencyController.textChangedValidation(e);
+        } else if (getCurrentTextField().getId().equalsIgnoreCase(getInputTemperature().getId())) {
+            temperatureController.textChangedValidation(e);
+        }
     }
 
     @FXML
-    private void convertCurrency(ActionEvent e){
+    private void convertCurrency(ActionEvent e) {
         currencyController.conversionRequest();
     }
+
+    @FXML
+    private void convertTemperature(ActionEvent e) {
+        temperatureController.conversionRequest();
+    }
+
 
     private void setContainerVisible(Pane active, Pane inactive1, Pane inactive2, Pane inactive3, Pane inactive4) {
         active.setVisible(true);

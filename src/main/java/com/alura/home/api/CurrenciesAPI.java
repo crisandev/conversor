@@ -1,4 +1,5 @@
 package com.alura.home.api;
+import com.alura.home.enums.Languages;
 import com.alura.home.util.Language;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,7 +14,7 @@ public class CurrenciesAPI {
     private static final String CURRENCIES_REQUEST = "/currency/list";
     private static final String CONVERSION_REQUEST = "/currency/convert";
     private static final String API_CURRENCIES_URL = API + CURRENCIES_REQUEST + API_KEY + "&format=json";
-    private static final String LOCAL_JSON_CURRENCIES_FILE = "src/main/resources/files/spanish-countries.json";
+    private static final String LOCAL_JSON_CURRENCIES_FILE = "src/main/resources/json-files/spanish-countries.json";
 
 
     private static String apiRequest(String str) throws Exception {
@@ -27,9 +28,9 @@ public class CurrenciesAPI {
     }
 
     public static String getCurrenciesJSON() throws Exception {
-        if (Language.getLang().equals(Language.languages.EN.name())) {
+        if (Language.getLang().equals(Languages.EN.name())) {
             return apiRequest(API_CURRENCIES_URL);
-        } else if (Language.getLang().equals(Language.languages.ES.name())) {
+        } else if (Language.getLang().equals(Languages.ES.name())) {
             return new String(Files.readAllBytes(Path.of(LOCAL_JSON_CURRENCIES_FILE)));
         }
         return null;

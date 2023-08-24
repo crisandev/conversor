@@ -1,18 +1,30 @@
 package com.alura.home.util;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-import com.alura.home.controllers.ComboBoxController;
-import com.alura.home.controllers.CurrencyController;
-import com.alura.home.interfaces.Converter;
-import javafx.collections.FXCollections;
-import javafx.scene.control.ComboBox;
-
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 
 public class Utilities {
+
+    public static boolean validateText(TextField input, Label lblMessage, Button btn){
+
+        try {
+            if (input.getText().equalsIgnoreCase("")) throw new NullPointerException();
+            Double.parseDouble(input.getText());
+            lblMessage.setVisible(false);
+            btn.setDisable(false);
+            return true;
+        } catch (NumberFormatException ex) {
+            lblMessage.setVisible(true);
+            btn.setDisable(true);
+            lblMessage.setText("*Invalid input format");
+        } catch (NullPointerException ex) {
+            lblMessage.setVisible(false);
+            btn.setDisable(true);
+        }
+        return false;
+    }
 
     public static List<String> showCountryCurrencies(HashMap<String, String> hashMap) {
         List<String> listCurrencies = new ArrayList<>();
@@ -22,5 +34,13 @@ public class Utilities {
         }
         listCurrencies.sort(String::compareToIgnoreCase);
         return listCurrencies;
+    }
+
+    public static List<String> showTemperaturesList() {
+        List<String> list = new LinkedList<>();
+        list.add("Fahrenheit");
+        list.add("Celsius");
+        list.add("Kelvin");
+        return list;
     }
 }
