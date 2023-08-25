@@ -100,7 +100,7 @@
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputCurrency" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onCurrencyTextChanged" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputCurrency" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onCurrencyTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -111,7 +111,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="inputCurrencyResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="240.0" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputCurrencyResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="238.0" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -154,6 +154,9 @@
                </children>
             </Pane>
          </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
       </Pane>
       <Pane fx:id="containerTemperature" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
@@ -179,7 +182,7 @@
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputTemperature" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTemperatureTextChanged" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputTemperature" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTemperatureTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -190,7 +193,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="inputTemperatureResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="240.0" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputTemperatureResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="238.0" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -258,7 +261,7 @@
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputWeight" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onWeightTextChanged" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputWeight" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onWeightTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -269,7 +272,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="inputWeightResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="240.0" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputWeightResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="238.0" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -337,7 +340,7 @@
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputLongitude" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onLongitudeTextChanged" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputLongitude" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onLongitudeTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -348,7 +351,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="inputLongitudeResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="240.0" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputLongitudeResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="238.0" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -416,7 +419,7 @@
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputTime" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTimeTextChanged" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputTime" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTimeTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -427,7 +430,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="inputTimeResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="240.0" prefHeight="50.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
+                  <TextField fx:id="inputTimeResult" alignment="TOP_RIGHT" editable="false" layoutX="17.0" layoutY="238.0" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -471,5 +474,13 @@
             </Pane>
          </children>
       </Pane>
+      <ComboBox fx:id="cbLanguages" layoutX="875.0" layoutY="23.0" prefWidth="150.0" style="-fx-background-color: #1b2942;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </ComboBox>
     </children>
 </AnchorPane>

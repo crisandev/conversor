@@ -2,7 +2,9 @@ package com.alura.home.util;
 
 import com.alura.home.api.WeightAPI;
 import com.alura.home.controllers.MainController;
+import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
+import com.alura.home.language.Language;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -104,6 +106,18 @@ public class Utilities {
     public static List<String> showLongitudesList(JSONArray jsonArray) throws Exception {
         List<String> list = new LinkedList<>();
         for (int i = 0; i < jsonArray.length(); i++) list.add(jsonArray.getJSONObject(i).getString("name"));
+        return list;
+    }
+
+    public static List<String> showLanguagesList() {
+        List<String> list = new LinkedList<>();
+        if (Language.getLang() == Languages.ES.name()) {
+            list.add("Español");
+            list.add("Inglés");
+        } else {
+            list.add("English");
+            list.add("Spanish");
+        }
         return list;
     }
 }

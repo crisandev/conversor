@@ -18,7 +18,10 @@ public class ComboBoxController {
     }
 
     @FXML
-    public static void comboBoxStyling(ComboBox<String> comboBox) {
+    public static void comboBoxStyling(ComboBox<String> comboBox, String... padding) {
+        String pad;
+        if (padding.length > 0) pad = "-fx-padding:" + padding[0] + padding[0] + padding[0] + padding[0] + ";";
+        else pad = "-fx-padding: 0px 0px 0px 0px;";
         comboBox.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -37,14 +40,17 @@ public class ComboBoxController {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
                 setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
-                setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
+                setStyle("-fx-font-size: 18px; " + pad);
                 setCursor(Cursor.HAND);
             }
         });
     }
 
     @FXML
-    public static void comboBoxHover(ComboBox<String> comboBox) {
+    public static void comboBoxHover(ComboBox<String> comboBox, String... padding) {
+        String pad;
+        if (padding.length > 0) pad = "-fx-padding:" + padding[0] + padding[0] + padding[0] + padding[0] + ";";
+        else pad = "-fx-padding: 0px 0px 0px 0px;";
         comboBox.setOnMouseEntered(event -> comboBox.setButtonCell(new ListCell<String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -52,7 +58,7 @@ public class ComboBoxController {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
                 setBackground(new Background(new BackgroundFill(Color.web("#151f35"), new CornerRadii(0), new Insets(-0.5))));
-                setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
+                setStyle("-fx-font-size: 18px; " + pad);
             }
         }));
 
@@ -63,7 +69,7 @@ public class ComboBoxController {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
                 setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
-                setStyle("-fx-font-size: 18px; -fx-padding: 0px 0px 0px 0px;");
+                setStyle("-fx-font-size: 18px; " + pad);
             }
         }));
     }

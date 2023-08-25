@@ -179,6 +179,9 @@ public abstract class Controller {
 
     @FXML
     private Label validationMessageTime;
+
+    @FXML
+    private ComboBox<String> cbLanguages;
     private Button currentBtn;
     private TextField currentTextField;
 
@@ -195,6 +198,14 @@ public abstract class Controller {
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
+
+    public ComboBox<String> getCbLanguages() {
+        return cbLanguages;
+    }
+
+    public void setCbLanguages(ComboBox<String> cbLanguages) {
+        this.cbLanguages = cbLanguages;
+    }
 
     public AnchorPane getLayout() {
         return layout;

@@ -1,5 +1,7 @@
 package com.alura.home.controllers;
 
+import com.alura.home.util.Utilities;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,6 +26,7 @@ public class MainController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cbLanguages();
         currencyController = new CurrencyController(this);
         temperatureController = new TemperatureController(this);
         weightController = new WeightController(this);
@@ -66,6 +69,13 @@ public class MainController extends Controller implements Initializable {
             timeController.reset();
             btnSelected();
         }
+    }
+
+    private void cbLanguages(){
+        getCbLanguages().setItems(FXCollections.observableArrayList(Utilities.showLanguagesList()));
+        getCbLanguages().getSelectionModel().select(0);
+        ComboBoxController.comboBoxStyling(getCbLanguages(), " 7px");
+        ComboBoxController.comboBoxHover(getCbLanguages(), " 7px");
     }
 
     @FXML
