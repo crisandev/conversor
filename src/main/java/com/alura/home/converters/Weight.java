@@ -15,11 +15,13 @@ import java.util.List;
 import java.util.Locale;
 
 public class Weight implements Converter {
+    private final WeightAPI weightAPI = new WeightAPI();
+
     @Override
     public List<String> insertComboBoxValues() {
 
         try {
-            String weights = WeightAPI.getWeightsJSON();
+            String weights = weightAPI.getJSON();
             if (weights.equalsIgnoreCase("")) throw new NullPointerException("Ocurrió un error");
             JSONObject json = new JSONObject(weights);
             JSONArray jsonUnits = json.getJSONArray("units");
@@ -39,19 +41,10 @@ public class Weight implements Converter {
         double amountDouble = Double.parseDouble(amount);
         if (convertFrom.equalsIgnoreCase(convertTo)) return amountDouble;
         try {
-            String weights = WeightAPI.getWeightsJSON();
-            if (weights.equalsIgnoreCase("")) throw new NullPointerException("Ocurrió un error");
-
-            JSONObject json = new JSONObject(weights);
-            JSONArray jsonUnits = json.getJSONArray("units");
-            for (int i = 0; i < jsonUnits.length(); i++) {
-                JSONObject element = jsonUnits.getJSONObject(i);
-                if (element.getString("name").equalsIgnoreCase(convertFrom)) {
-                    JSONObject conversions = element.getJSONObject("conversions");
-                    BigDecimal conversion = BigDecimal.valueOf(conversions.getDouble(convertTo));
-                    return amountDouble * conversion.doubleValue();
-                }
-            }
+            JSONObject conversions = weightAPI.getConversionJSON(convertFrom, null, null);
+            if (conversions.equals("")) throw new NullPointerException("Ocurrió un error");
+            BigDecimal conversion = BigDecimal.valueOf(conversions.getDouble(convertTo));
+            return amountDouble * conversion.doubleValue();
         } catch (NullPointerException ex) {
             PopupWindow.errorMessage(ex.getMessage(), "");
         } catch (NoSuchFileException ex) {

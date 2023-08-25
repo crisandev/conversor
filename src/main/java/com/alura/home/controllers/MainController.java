@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -35,14 +34,6 @@ public class MainController extends Controller implements Initializable {
         weightController.init();
         longitudeController.init();
         timeController.init();
-
-//        BigDecimal d = new BigDecimal(9.8421e+7);
-//        NumberFormat n = NumberFormat.getInstance(Locale.US);
-//        n.setMaximumFractionDigits(19);
-//        String formatResult = n.format(d);
-//        System.out.println(formatResult);
-
-
     }
 
     @FXML

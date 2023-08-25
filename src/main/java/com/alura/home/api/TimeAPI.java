@@ -1,13 +1,25 @@
 package com.alura.home.api;
 
+import com.alura.home.interfaces.ApiJSONFiles;
+import com.alura.home.util.Utilities;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class TimeAPI {
+public class TimeAPI implements ApiJSONFiles {
     private static final String JSON_TIME_URL_EN = "src/main/resources/json-files/time-list-en.json";
     private static final String JSON_TIME_URL_ES = "src/main/resources/json-files/time-list-es.json";
 
-    public static String getTimeJSON() throws Exception {
+
+    @Override
+    public String getJSON() throws Exception {
         return new String(Files.readAllBytes(Path.of(JSON_TIME_URL_EN)));
+    }
+
+    @Override
+    public JSONObject getConversionJSON(String convertFrom, String convertTo, String amount) throws Exception {
+        return Utilities.getConversionJSON(convertFrom, this);
     }
 }

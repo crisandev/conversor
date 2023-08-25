@@ -12,10 +12,12 @@ import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 public class Time implements Converter {
+    private final TimeAPI timeAPI = new TimeAPI();
+
     @Override
     public List<String> insertComboBoxValues() {
         try {
-            String times = TimeAPI.getTimeJSON();
+            String times = timeAPI.getJSON();
             if (times.equalsIgnoreCase("")) throw new NullPointerException("Ocurrió un error");
             JSONObject json = new JSONObject(times);
             JSONArray jsonUnits = json.getJSONArray("units");
@@ -36,19 +38,10 @@ public class Time implements Converter {
         if (convertFrom.equalsIgnoreCase(convertTo)) return amountDouble;
 
         try {
-            String time = TimeAPI.getTimeJSON();
-            if (time.equalsIgnoreCase("")) throw new NullPointerException("Ocurrió un error");
-
-            JSONObject json = new JSONObject(time);
-            JSONArray jsonUnits = json.getJSONArray("units");
-            for (int i = 0; i < jsonUnits.length(); i++) {
-                JSONObject element = jsonUnits.getJSONObject(i);
-                if (element.getString("name").equalsIgnoreCase(convertFrom)) {
-                    JSONObject conversions = element.getJSONObject("conversions");
-                    BigDecimal conversion = BigDecimal.valueOf(conversions.getDouble(convertTo));
-                    return amountDouble * conversion.doubleValue();
-                }
-            }
+            JSONObject conversions = timeAPI.getConversionJSON(convertFrom, null, null);
+            if (conversions.equals("")) throw new NullPointerException("Ocurrió un error");
+            BigDecimal conversion = BigDecimal.valueOf(conversions.getDouble(convertTo));
+            return amountDouble * conversion.doubleValue();
         } catch (NullPointerException ex) {
             PopupWindow.errorMessage(ex.getMessage(), "");
         } catch (NoSuchFileException ex) {

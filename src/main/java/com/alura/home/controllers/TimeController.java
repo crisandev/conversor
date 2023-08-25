@@ -25,13 +25,7 @@ public class TimeController extends Controller implements ConverterController {
 
     @Override
     public void reset() {
-        mc.getCbTimes().getSelectionModel().select("SELECT A TIME");
-        mc.getCbTimesChange().getSelectionModel().select("SELECT A TIME");
-        mc.getInputTime().setText(null);
-        mc.getInputTime().setPromptText("0.0");
-        mc.getInputTimeResult().setText(null);
-        mc.getInputTimeResult().setPromptText("0.0");
-        mc.getValidationMessageTime().setVisible(false);
+        Utilities.reset(mc.getCbTimes(), mc.getCbTimesChange(), mc.getInputTime(), mc.getInputTimeResult(), mc.getValidationMessageTime(), "TIME");
     }
 
 
@@ -52,12 +46,7 @@ public class TimeController extends Controller implements ConverterController {
 
             if (textChangedValidation(null)) {
                 Double result = timeController.convert(convertFrom, convertTo, amount);
-
-                if (result < 1) {
-                    Utilities.showResult(result, mc.getInputTimeResult(), 10);
-                } else {
-                    Utilities.showResult(result, mc.getInputTimeResult(), 3);
-                }
+                Utilities.showResult(result, mc.getInputTimeResult());
             } else {
                 mc.getInputTimeResult().setText("0.0");
             }

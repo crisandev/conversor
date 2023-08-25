@@ -1,4 +1,4 @@
-package com.alura.home.util;
+package com.alura.home.language;
 
 import com.alura.home.enums.Languages;
 

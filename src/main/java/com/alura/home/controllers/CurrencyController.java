@@ -27,13 +27,7 @@ public class CurrencyController extends Controller implements ConverterControlle
 
     @Override
     public void reset() {
-        mc.getCbCurrencies().getSelectionModel().select("SELECT A CURRENCY");
-        mc.getCbCurrenciesChange().getSelectionModel().select("SELECT A CURRENCY");
-        mc.getInputCurrency().setText(null);
-        mc.getInputCurrency().setPromptText("0.0");
-        mc.getInputCurrencyResult().setText(null);
-        mc.getInputCurrencyResult().setPromptText("0.0");
-        mc.getValidationMessageCurrency().setVisible(false);
+        Utilities.reset(mc.getCbCurrencies(), mc.getCbCurrenciesChange(), mc.getInputCurrency(), mc.getInputCurrencyResult(), mc.getValidationMessageCurrency(), "CURRENCY");
     }
 
     @Override
@@ -56,7 +50,7 @@ public class CurrencyController extends Controller implements ConverterControlle
 
             if (textChangedValidation(null)) {
                 Double result = currencyConverter.convert(convertFrom, convertTo, amount);
-                Utilities.showResult(result, mc.getInputCurrencyResult(), 2);
+                Utilities.showResult(result, mc.getInputCurrencyResult());
             } else {
                 mc.getInputCurrencyResult().setText("0.0");
             }

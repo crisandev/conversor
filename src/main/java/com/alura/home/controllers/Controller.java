@@ -220,92 +220,35 @@ public abstract class Controller {
         this.sidebar = sidebar;
     }
 
-    public Text getTitle() {
-        return title;
-    }
 
-    public void setTitle(Text title) {
-        this.title = title;
-    }
 
     public Button getBtnCurrency() {
         return btnCurrency;
     }
 
-    public void setBtnCurrency(Button btnCurrency) {
-        this.btnCurrency = btnCurrency;
-    }
 
     public Button getBtnTemperature() {
         return btnTemperature;
     }
 
-    public void setBtnTemperature(Button btnTemperature) {
-        this.btnTemperature = btnTemperature;
-    }
 
     public Button getBtnWeight() {
         return btnWeight;
     }
 
-    public void setBtnWeight(Button btnWeight) {
-        this.btnWeight = btnWeight;
-    }
 
     public Button getBtnLongitude() {
         return btnLongitude;
     }
 
-    public void setBtnLongitude(Button btnLongitude) {
-        this.btnLongitude = btnLongitude;
-    }
 
     public Button getBtnTime() {
         return btnTime;
     }
 
-    public void setBtnTime(Button btnTime) {
-        this.btnTime = btnTime;
-    }
 
     public Pane getContainerCurrency() {
         return containerCurrency;
-    }
-
-    public void setContainerCurrency(Pane containerCurrency) {
-        this.containerCurrency = containerCurrency;
-    }
-
-    public Text getTitleCurrency() {
-        return titleCurrency;
-    }
-
-    public void setTitleCurrency(Text titleCurrency) {
-        this.titleCurrency = titleCurrency;
-    }
-
-    public Text getSubtitleCurrency() {
-        return subtitleCurrency;
-    }
-
-    public void setSubtitleCurrency(Text subtitleCurrency) {
-        this.subtitleCurrency = subtitleCurrency;
-    }
-
-    public Label getLblInsertValue() {
-        return lblInsertValue;
-    }
-
-    public void setLblInsertValue(Label lblInsertValue) {
-        this.lblInsertValue = lblInsertValue;
-    }
-
-    public Label getLblResult() {
-        return lblResult;
-    }
-
-    public void setLblResult(Label lblResult) {
-        this.lblResult = lblResult;
     }
 
     public TextField getInputCurrency() {
@@ -424,224 +367,96 @@ public abstract class Controller {
         return validationMessageTemperature;
     }
 
-    public void setValidationMessageTemperature(Label validationMessageTemperature) {
-        this.validationMessageTemperature = validationMessageTemperature;
-    }
 
     public Pane getContainerWeight() {
         return containerWeight;
-    }
-
-    public void setContainerWeight(Pane containerWeight) {
-        this.containerWeight = containerWeight;
-    }
-
-    public Text getTitleWeight() {
-        return titleWeight;
-    }
-
-    public void setTitleWeight(Text titleWeight) {
-        this.titleWeight = titleWeight;
-    }
-
-    public Text getSubtitleWeight() {
-        return subtitleWeight;
-    }
-
-    public void setSubtitleWeight(Text subtitleWeight) {
-        this.subtitleWeight = subtitleWeight;
     }
 
     public TextField getInputWeight() {
         return inputWeight;
     }
 
-    public void setInputWeight(TextField inputWeight) {
-        this.inputWeight = inputWeight;
-    }
 
     public TextField getInputWeightResult() {
         return inputWeightResult;
-    }
-
-    public void setInputWeightResult(TextField inputWeightResult) {
-        this.inputWeightResult = inputWeightResult;
     }
 
     public ComboBox<String> getCbWeights() {
         return cbWeights;
     }
 
-    public void setCbWeights(ComboBox<String> cbWeights) {
-        this.cbWeights = cbWeights;
-    }
-
     public ComboBox<String> getCbWeightChange() {
         return cbWeightChange;
-    }
-
-    public void setCbWeightChange(ComboBox<String> cbWeightChange) {
-        this.cbWeightChange = cbWeightChange;
     }
 
     public Button getBtnConvertWeight() {
         return btnConvertWeight;
     }
 
-    public void setBtnConvertWeight(Button btnConvertWeight) {
-        this.btnConvertWeight = btnConvertWeight;
-    }
-
     public Label getValidationMessageWeight() {
         return validationMessageWeight;
-    }
-
-    public void setValidationMessageWeight(Label validationMessageWeight) {
-        this.validationMessageWeight = validationMessageWeight;
     }
 
     public Pane getContainerLongitude() {
         return containerLongitude;
     }
 
-    public void setContainerLongitude(Pane containerLongitude) {
-        this.containerLongitude = containerLongitude;
-    }
-
-    public Text getTitleLongitude() {
-        return titleLongitude;
-    }
-
-    public void setTitleLongitude(Text titleLongitude) {
-        this.titleLongitude = titleLongitude;
-    }
-
-    public Text getSubtitleLongitude() {
-        return subtitleLongitude;
-    }
-
-    public void setSubtitleLongitude(Text subtitleLongitude) {
-        this.subtitleLongitude = subtitleLongitude;
-    }
-
     public TextField getInputLongitude() {
         return inputLongitude;
     }
 
-    public void setInputLongitude(TextField inputLongitude) {
-        this.inputLongitude = inputLongitude;
-    }
 
     public TextField getInputLongitudeResult() {
         return inputLongitudeResult;
-    }
-
-    public void setInputLongitudeResult(TextField inputLongitudeResult) {
-        this.inputLongitudeResult = inputLongitudeResult;
     }
 
     public ComboBox<String> getCbLongitude() {
         return cbLongitude;
     }
 
-    public void setCbLongitude(ComboBox<String> cbLongitude) {
-        this.cbLongitude = cbLongitude;
-    }
 
     public ComboBox<String> getCbLongitudeChange() {
         return cbLongitudeChange;
-    }
-
-    public void setCbLongitudeChange(ComboBox<String> cbLongitudeChange) {
-        this.cbLongitudeChange = cbLongitudeChange;
     }
 
     public Button getBtnConvertLongitude() {
         return btnConvertLongitude;
     }
 
-    public void setBtnConvertLongitude(Button btnConvertLongitude) {
-        this.btnConvertLongitude = btnConvertLongitude;
-    }
-
     public Label getValidationMessageLongitude() {
         return validationMessageLongitude;
     }
 
-    public void setValidationMessageLongitude(Label validationMessageLongitude) {
-        this.validationMessageLongitude = validationMessageLongitude;
-    }
 
     public Pane getContainerTime() {
         return containerTime;
     }
 
-    public void setContainerTime(Pane containerTime) {
-        this.containerTime = containerTime;
-    }
-
-    public Text getTitleTime() {
-        return titleTime;
-    }
-
-    public void setTitleTime(Text titleTime) {
-        this.titleTime = titleTime;
-    }
-
-    public Text getSubtitleTime() {
-        return subtitleTime;
-    }
-
-    public void setSubtitleTime(Text subtitleTime) {
-        this.subtitleTime = subtitleTime;
-    }
 
     public TextField getInputTime() {
         return inputTime;
     }
 
-    public void setInputTime(TextField inputTime) {
-        this.inputTime = inputTime;
-    }
 
     public TextField getInputTimeResult() {
         return inputTimeResult;
     }
 
-    public void setInputTimeResult(TextField inputTimeResult) {
-        this.inputTimeResult = inputTimeResult;
-    }
 
     public ComboBox<String> getCbTimes() {
         return cbTimes;
-    }
-
-    public void setCbTimes(ComboBox<String> cbTimes) {
-        this.cbTimes = cbTimes;
     }
 
     public ComboBox<String> getCbTimesChange() {
         return cbTimesChange;
     }
 
-    public void setCbTimesChange(ComboBox<String> cbTimesChange) {
-        this.cbTimesChange = cbTimesChange;
-    }
-
     public Button getBtnConvertTime() {
         return btnConvertTime;
     }
 
-    public void setBtnConvertTime(Button btnConvertTime) {
-        this.btnConvertTime = btnConvertTime;
-    }
-
     public Label getValidationMessageTime() {
         return validationMessageTime;
-    }
-
-    public void setValidationMessageTime(Label validationMessageTime) {
-        this.validationMessageTime = validationMessageTime;
     }
 
     public Button getCurrentBtn() {
@@ -652,11 +467,4 @@ public abstract class Controller {
         this.currentBtn = currentBtn;
     }
 
-    public TextField getCurrentTextField() {
-        return currentTextField;
-    }
-
-    public void setCurrentTextField(TextField currentTextField) {
-        this.currentTextField = currentTextField;
-    }
 }

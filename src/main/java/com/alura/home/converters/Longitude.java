@@ -13,10 +13,13 @@ import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 public class Longitude implements Converter {
+
+    private final LongitudeAPI longitudeAPI = new LongitudeAPI();
+
     @Override
     public List<String> insertComboBoxValues() {
         try {
-            String longitudes = LongitudeAPI.getLongitudesJSON();
+            String longitudes = longitudeAPI.getJSON();
             if (longitudes.equalsIgnoreCase("")) throw new NullPointerException("Ocurrió un error");
             JSONObject json = new JSONObject(longitudes);
             JSONArray jsonUnits = json.getJSONArray("units");
@@ -37,7 +40,7 @@ public class Longitude implements Converter {
         if (convertFrom.equalsIgnoreCase(convertTo)) return amountDouble;
 
         try {
-            JSONObject conversions = LongitudeAPI.getConversionJSON(convertFrom, convertTo);
+            JSONObject conversions = longitudeAPI.getConversionJSON(convertFrom, null, null);
             if (conversions.equals("")) throw new NullPointerException("Ocurrió un error");
             BigDecimal conversion = BigDecimal.valueOf(conversions.getDouble(convertTo));
             return amountDouble * conversion.doubleValue();

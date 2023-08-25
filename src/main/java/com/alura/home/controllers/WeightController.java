@@ -28,13 +28,7 @@ public class WeightController extends Controller implements ConverterController 
 
     @Override
     public void reset() {
-        mc.getCbWeights().getSelectionModel().select("SELECT A WEIGHT");
-        mc.getCbWeightChange().getSelectionModel().select("SELECT A WEIGHT");
-        mc.getInputWeight().setText(null);
-        mc.getInputWeight().setPromptText("0.0");
-        mc.getInputWeightResult().setText(null);
-        mc.getInputWeightResult().setPromptText("0.0");
-        mc.getValidationMessageWeight().setVisible(false);
+        Utilities.reset(mc.getCbWeights(), mc.getCbWeightChange(), mc.getInputWeight(), mc.getInputWeightResult(), mc.getValidationMessageWeight(), "WEIGHT");
     }
 
 
@@ -56,7 +50,7 @@ public class WeightController extends Controller implements ConverterController 
                 throw new IncorrectValueException("Select the destiny weight to convert.");
             if (textChangedValidation(null)) {
                 Double result = weightConverter.convert(convertFrom, convertTo, amount);
-                Utilities.showResult(result, mc.getInputWeightResult(),10);
+                Utilities.showResult(result, mc.getInputWeightResult());
             } else {
                 mc.getInputWeightResult().setText("0.0");
             }

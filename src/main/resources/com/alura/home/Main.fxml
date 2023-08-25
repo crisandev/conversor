@@ -76,7 +76,7 @@
             </Button>
             </children>
         </VBox>
-      <Pane fx:id="containerCurrency" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
+      <Pane fx:id="containerCurrency" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0">
          <children>
             <Text fx:id="titleCurrency" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENCY" textAlignment="CENTER">
                <font>
@@ -313,7 +313,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="containerLongitude" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0">
+      <Pane fx:id="containerLongitude" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
             <Text fx:id="titleLongitude" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LONGITUDE" textAlignment="CENTER">
                <font>

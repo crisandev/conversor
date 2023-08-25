@@ -24,13 +24,7 @@ public class LongitudeController extends Controller implements ConverterControll
 
     @Override
     public void reset() {
-        mc.getCbLongitude().getSelectionModel().select("SELECT A LONGITUDE");
-        mc.getCbLongitudeChange().getSelectionModel().select("SELECT A LONGITUDE");
-        mc.getInputLongitude().setText(null);
-        mc.getInputLongitude().setPromptText("0.0");
-        mc.getInputLongitudeResult().setText(null);
-        mc.getInputLongitudeResult().setPromptText("0.0");
-        mc.getValidationMessageLongitude().setVisible(false);
+        Utilities.reset(mc.getCbLongitude(), mc.getCbLongitudeChange(), mc.getInputLongitude(), mc.getInputLongitudeResult(), mc.getValidationMessageLongitude(), "LONGITUDE");
     }
 
 
@@ -51,13 +45,8 @@ public class LongitudeController extends Controller implements ConverterControll
             if (convertTo.contains("SELECT"))
                 throw new IncorrectValueException("Select the destiny longitude to convert.");
             if (textChangedValidation(null)) {
-
                 Double result = longitudeController.convert(convertFrom, convertTo, amount);
-                if (result < 1) {
-                    Utilities.showResult(result, mc.getInputLongitudeResult(), 10);
-                } else {
-                    Utilities.showResult(result, mc.getInputLongitudeResult(), 3);
-                }
+                Utilities.showResult(result, mc.getInputLongitudeResult());
             } else {
                 mc.getInputLongitudeResult().setText("0.0");
             }

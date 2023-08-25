@@ -12,13 +12,14 @@ import java.util.*;
 
 public class Currency implements Converter {
 
-    private HashMap<String, String> currenciesHashMap = new HashMap<>();
+    private final HashMap<String, String> currenciesHashMap = new HashMap<>();
+    private final CurrenciesAPI currenciesAPI = new CurrenciesAPI();
 
     @Override
     public List<String> insertComboBoxValues() {
 
         try {
-            String currencies = CurrenciesAPI.getCurrenciesJSON();
+            String currencies = currenciesAPI.getJSON();
             if (currencies == null) throw new NullPointerException("Ocurrió un error");
 
             JSONObject json = new JSONObject(currencies);
@@ -38,7 +39,7 @@ public class Currency implements Converter {
     @Override
     public Double convert(String convertFrom, String convertTo, String amount) {
         try {
-            JSONObject json = new JSONObject(CurrenciesAPI.getConversionJSON(convertFrom, convertTo, amount));
+            JSONObject json = currenciesAPI.getConversionJSON(convertFrom, convertTo, amount);
             JSONObject rates = json.getJSONObject("rates");
             JSONObject currencyResult = rates.getJSONObject(convertTo);
             String result = currencyResult.getString("rate_for_amount");

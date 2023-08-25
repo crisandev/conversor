@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface Converter {
 
-    public List<String> insertComboBoxValues();
-    public Double convert(String convertFrom, String convertTo, String amount);
+    List<String> insertComboBoxValues();
+    Double convert(String convertFrom, String convertTo, String amount);
 
 
 

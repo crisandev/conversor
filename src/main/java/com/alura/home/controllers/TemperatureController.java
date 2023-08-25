@@ -27,13 +27,7 @@ public class TemperatureController extends Controller implements ConverterContro
 
     @Override
     public void reset() {
-        mc.getCbTemperature().getSelectionModel().select("SELECT A SCALE");
-        mc.getCbTemperatureChange().getSelectionModel().select("SELECT A SCALE");
-        mc.getInputTemperature().setText(null);
-        mc.getInputTemperature().setPromptText("0.0");
-        mc.getInputTemperatureResult().setText(null);
-        mc.getInputTemperatureResult().setPromptText("0.0");
-        mc.getValidationMessageTemperature().setVisible(false);
+        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getValidationMessageTemperature(), "SCALE");
     }
 
 
@@ -54,7 +48,7 @@ public class TemperatureController extends Controller implements ConverterContro
             if (convertTo.contains("SELECT")) throw new IncorrectValueException("Select the destiny scale to convert.");
             if (textChangedValidation(null)) {
                 Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
-                Utilities.showResult(result, mc.getInputTemperatureResult(),2);
+                Utilities.showResult(result, mc.getInputTemperatureResult());
             } else {
                 mc.getInputTemperatureResult().setText("0.0");
             }
