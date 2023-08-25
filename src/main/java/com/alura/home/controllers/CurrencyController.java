@@ -56,7 +56,7 @@ public class CurrencyController extends Controller implements ConverterControlle
 
             if (textChangedValidation(null)) {
                 Double result = currencyConverter.convert(convertFrom, convertTo, amount);
-                Utilities.showResult(result, mc.getInputCurrencyResult(),2);
+                Utilities.showResult(result, mc.getInputCurrencyResult(), 2);
             } else {
                 mc.getInputCurrencyResult().setText("0.0");
             }

@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public abstract class Controller {
+
     @FXML
     private AnchorPane layout;
 
@@ -33,7 +34,7 @@ public abstract class Controller {
     private Button btnWeight;
 
     @FXML
-    private Button btnDistance;
+    private Button btnLongitude;
 
     @FXML
     private Button btnTime;
@@ -126,31 +127,31 @@ public abstract class Controller {
     private Label validationMessageWeight;
 
     @FXML
-    private Pane containerDistance;
+    private Pane containerLongitude;
 
     @FXML
-    private Text titleDistance;
+    private Text titleLongitude;
 
     @FXML
-    private Text subtitleDistance;
+    private Text subtitleLongitude;
 
     @FXML
-    private TextField inputDistance;
+    private TextField inputLongitude;
 
     @FXML
-    private TextField inputDistanceResult;
+    private TextField inputLongitudeResult;
 
     @FXML
-    private ComboBox<String> cbDistances;
+    private ComboBox<String> cbLongitude;
 
     @FXML
-    private ComboBox<String> cbDistancesChange;
+    private ComboBox<String> cbLongitudeChange;
 
     @FXML
-    private Button btnConvertDistance;
+    private Button btnConvertLongitude;
 
     @FXML
-    private Label validationMessageDistance;
+    private Label validationMessageLongitude;
 
     @FXML
     private Pane containerTime;
@@ -251,12 +252,12 @@ public abstract class Controller {
         this.btnWeight = btnWeight;
     }
 
-    public Button getBtnDistance() {
-        return btnDistance;
+    public Button getBtnLongitude() {
+        return btnLongitude;
     }
 
-    public void setBtnDistance(Button btnDistance) {
-        this.btnDistance = btnDistance;
+    public void setBtnLongitude(Button btnLongitude) {
+        this.btnLongitude = btnLongitude;
     }
 
     public Button getBtnTime() {
@@ -499,76 +500,76 @@ public abstract class Controller {
         this.validationMessageWeight = validationMessageWeight;
     }
 
-    public Pane getContainerDistance() {
-        return containerDistance;
+    public Pane getContainerLongitude() {
+        return containerLongitude;
     }
 
-    public void setContainerDistance(Pane containerDistance) {
-        this.containerDistance = containerDistance;
+    public void setContainerLongitude(Pane containerLongitude) {
+        this.containerLongitude = containerLongitude;
     }
 
-    public Text getTitleDistance() {
-        return titleDistance;
+    public Text getTitleLongitude() {
+        return titleLongitude;
     }
 
-    public void setTitleDistance(Text titleDistance) {
-        this.titleDistance = titleDistance;
+    public void setTitleLongitude(Text titleLongitude) {
+        this.titleLongitude = titleLongitude;
     }
 
-    public Text getSubtitleDistance() {
-        return subtitleDistance;
+    public Text getSubtitleLongitude() {
+        return subtitleLongitude;
     }
 
-    public void setSubtitleDistance(Text subtitleDistance) {
-        this.subtitleDistance = subtitleDistance;
+    public void setSubtitleLongitude(Text subtitleLongitude) {
+        this.subtitleLongitude = subtitleLongitude;
     }
 
-    public TextField getInputDistance() {
-        return inputDistance;
+    public TextField getInputLongitude() {
+        return inputLongitude;
     }
 
-    public void setInputDistance(TextField inputDistance) {
-        this.inputDistance = inputDistance;
+    public void setInputLongitude(TextField inputLongitude) {
+        this.inputLongitude = inputLongitude;
     }
 
-    public TextField getInputDistanceResult() {
-        return inputDistanceResult;
+    public TextField getInputLongitudeResult() {
+        return inputLongitudeResult;
     }
 
-    public void setInputDistanceResult(TextField inputDistanceResult) {
-        this.inputDistanceResult = inputDistanceResult;
+    public void setInputLongitudeResult(TextField inputLongitudeResult) {
+        this.inputLongitudeResult = inputLongitudeResult;
     }
 
-    public ComboBox<String> getCbDistances() {
-        return cbDistances;
+    public ComboBox<String> getCbLongitude() {
+        return cbLongitude;
     }
 
-    public void setCbDistances(ComboBox<String> cbDistances) {
-        this.cbDistances = cbDistances;
+    public void setCbLongitude(ComboBox<String> cbLongitude) {
+        this.cbLongitude = cbLongitude;
     }
 
-    public ComboBox<String> getCbDistancesChange() {
-        return cbDistancesChange;
+    public ComboBox<String> getCbLongitudeChange() {
+        return cbLongitudeChange;
     }
 
-    public void setCbDistancesChange(ComboBox<String> cbDistancesChange) {
-        this.cbDistancesChange = cbDistancesChange;
+    public void setCbLongitudeChange(ComboBox<String> cbLongitudeChange) {
+        this.cbLongitudeChange = cbLongitudeChange;
     }
 
-    public Button getBtnConvertDistance() {
-        return btnConvertDistance;
+    public Button getBtnConvertLongitude() {
+        return btnConvertLongitude;
     }
 
-    public void setBtnConvertDistance(Button btnConvertDistance) {
-        this.btnConvertDistance = btnConvertDistance;
+    public void setBtnConvertLongitude(Button btnConvertLongitude) {
+        this.btnConvertLongitude = btnConvertLongitude;
     }
 
-    public Label getValidationMessageDistance() {
-        return validationMessageDistance;
+    public Label getValidationMessageLongitude() {
+        return validationMessageLongitude;
     }
 
-    public void setValidationMessageDistance(Label validationMessageDistance) {
-        this.validationMessageDistance = validationMessageDistance;
+    public void setValidationMessageLongitude(Label validationMessageLongitude) {
+        this.validationMessageLongitude = validationMessageLongitude;
     }
 
     public Pane getContainerTime() {

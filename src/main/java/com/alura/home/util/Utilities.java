@@ -69,4 +69,10 @@ public class Utilities {
         for (int i = 0; i < jsonArray.length(); i++) list.add(jsonArray.getJSONObject(i).getString("name"));
         return list;
     }
+
+    public static List<String> showLongitudesList(JSONArray jsonArray) throws Exception {
+        List<String> list = new LinkedList<>();
+        for (int i = 0; i < jsonArray.length(); i++) list.add(jsonArray.getJSONObject(i).getString("name"));
+        return list;
+    }
 }

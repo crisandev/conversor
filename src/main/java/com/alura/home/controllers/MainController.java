@@ -17,7 +17,7 @@ public class MainController extends Controller implements Initializable {
     private CurrencyController currencyController;
     private TemperatureController temperatureController;
     private WeightController weightController;
-    private DistanceController distanceController;
+    private LongitudeController longitudeController;
     private TimeController timeController;
 
     public MainController() {
@@ -28,12 +28,12 @@ public class MainController extends Controller implements Initializable {
         currencyController = new CurrencyController(this);
         temperatureController = new TemperatureController(this);
         weightController = new WeightController(this);
-        distanceController = new DistanceController(this);
+        longitudeController = new LongitudeController(this);
         timeController = new TimeController(this);
         currencyController.init();
         temperatureController.init();
         weightController.init();
-        distanceController.init();
+        longitudeController.init();
         timeController.init();
 
 //        BigDecimal d = new BigDecimal(9.8421e+7);
@@ -55,31 +55,25 @@ public class MainController extends Controller implements Initializable {
     private void changeSection(ActionEvent e) {
         setCurrentBtn((Button) e.getSource());
         if (e.getSource() == getBtnCurrency()) {
-            setContainerVisible(getContainerCurrency(), getContainerTemperature(), getContainerWeight(), getContainerDistance(), getContainerTime());
+            setContainerVisible(getContainerCurrency(), getContainerTemperature(), getContainerWeight(), getContainerLongitude(), getContainerTime());
             currencyController.reset();
             btnSelected();
         } else if (e.getSource() == getBtnTemperature()) {
-            setContainerVisible(getContainerTemperature(), getContainerCurrency(), getContainerWeight(), getContainerDistance(), getContainerTime());
+            setContainerVisible(getContainerTemperature(), getContainerCurrency(), getContainerWeight(), getContainerLongitude(), getContainerTime());
             temperatureController.reset();
             btnSelected();
         } else if (e.getSource() == getBtnWeight()) {
-            setContainerVisible(getContainerWeight(), getContainerTemperature(), getContainerCurrency(), getContainerDistance(), getContainerTime());
+            setContainerVisible(getContainerWeight(), getContainerTemperature(), getContainerCurrency(), getContainerLongitude(), getContainerTime());
             weightController.reset();
             btnSelected();
-        } else if (e.getSource() == getBtnDistance()) {
-            setContainerVisible(getContainerDistance(), getContainerWeight(), getContainerTemperature(), getContainerCurrency(), getContainerTime());
+        } else if (e.getSource() == getBtnLongitude()) {
+            setContainerVisible(getContainerLongitude(), getContainerWeight(), getContainerTemperature(), getContainerCurrency(), getContainerTime());
+            longitudeController.reset();
             btnSelected();
         } else if (e.getSource() == getBtnTime()) {
-            setContainerVisible(getContainerTime(), getContainerDistance(), getContainerWeight(), getContainerTemperature(), getContainerCurrency());
+            setContainerVisible(getContainerTime(), getContainerLongitude(), getContainerWeight(), getContainerTemperature(), getContainerCurrency());
             timeController.reset();
             btnSelected();
-        }
-    }
-
-    @FXML
-    public void onTextChanged(KeyEvent e) {
-        setCurrentTextField((TextField) e.getSource());
-        if (getCurrentTextField().getId().equalsIgnoreCase(getInputCurrency().getId())) {
         }
     }
 
@@ -99,7 +93,8 @@ public class MainController extends Controller implements Initializable {
     }
 
     @FXML
-    public void onDistanceTextChanged(KeyEvent e) {
+    public void onLongitudeTextChanged(KeyEvent e) {
+        longitudeController.textChangedValidation(e);
     }
 
     @FXML
@@ -124,7 +119,8 @@ public class MainController extends Controller implements Initializable {
     }
 
     @FXML
-    private void convertDistance(ActionEvent e) {
+    private void convertLongitude(ActionEvent e) {
+        longitudeController.conversionRequest();
     }
 
     @FXML
@@ -144,7 +140,7 @@ public class MainController extends Controller implements Initializable {
     private void btnSelected() {
         paintSelected(getContainerCurrency(), getBtnCurrency());
         paintSelected(getContainerTemperature(), getBtnTemperature());
-        paintSelected(getContainerDistance(), getBtnDistance());
+        paintSelected(getContainerLongitude(), getBtnLongitude());
         paintSelected(getContainerWeight(), getBtnWeight());
         paintSelected(getContainerTime(), getBtnTime());
     }

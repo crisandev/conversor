@@ -23,7 +23,6 @@ public class TemperatureController extends Controller implements ConverterContro
     public void init() {
         ComboBoxController.comboBoxInitializing(mc.getCbTemperature(), temperatureConverter, "SELECT A SCALE");
         ComboBoxController.comboBoxInitializing(mc.getCbTemperatureChange(), temperatureConverter, "SELECT A SCALE");
-        Utilities.showTemperaturesList();
     }
 
     @Override

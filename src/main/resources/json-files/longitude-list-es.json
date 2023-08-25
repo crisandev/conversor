@@ -1,0 +1,180 @@
+{
+  "units": [
+    {
+      "name": "Milímetro",
+      "symbol": "mm",
+      "conversions": {
+        "Centímetro": 0.1,
+        "Metro": 0.001,
+        "Kilómetro": 1e-6,
+        "Pulgada": 0.0393701,
+        "Pie": 0.00328084,
+        "Yarda": 0.00109361,
+        "Milla": 6.2137e-7,
+        "Milla Náutica": 5.39957e-7,
+        "Año Luz": 1.057e-19,
+        "Parsec": 3.24078e-20
+      }
+    },
+    {
+      "name": "Centímetro",
+      "symbol": "cm",
+      "conversions": {
+        "Milímetro": 10,
+        "Metro": 0.01,
+        "Kilómetro": 1e-5,
+        "Pulgada": 0.393701,
+        "Pie": 0.0328084,
+        "Yarda": 0.0109361,
+        "Milla": 6.2137e-6,
+        "Milla Náutica": 5.39957e-6,
+        "Año Luz": 1.057e-18,
+        "Parsec": 3.24078e-19
+      }
+    },
+    {
+      "name": "Metro",
+      "symbol": "m",
+      "conversions": {
+        "Milímetro": 1000,
+        "Centímetro": 100,
+        "Kilómetro": 0.001,
+        "Pulgada": 39.3701,
+        "Pie": 3.28084,
+        "Yarda": 1.09361,
+        "Milla": 0.000621371,
+        "Milla Náutica": 0.000539957,
+        "Año Luz": 1.057e-16,
+        "Parsec": 3.24078e-17
+      }
+    },
+    {
+      "name": "Kilómetro",
+      "symbol": "km",
+      "conversions": {
+        "Milímetro": 1e+6,
+        "Centímetro": 1e+5,
+        "Metro": 1000,
+        "Pulgada": 39370.1,
+        "Pie": 3280.84,
+        "Yarda": 1093.61,
+        "Milla": 0.621371,
+        "Milla Náutica": 0.539957,
+        "Año Luz": 1.057e-13,
+        "Parsec": 3.24078e-14
+      }
+    },
+    {
+      "name": "Pulgada",
+      "symbol": "in",
+      "conversions": {
+        "Milímetro": 25.4,
+        "Centímetro": 2.54,
+        "Metro": 0.0254,
+        "Kilómetro": 2.54e-5,
+        "Pie": 0.0833333,
+        "Yarda": 0.0277778,
+        "Milla": 0.0000157828,
+        "Milla Náutica": 0.0000137149,
+        "Año Luz": 2.611e-17,
+        "Parsec": 8.04702e-18
+      }
+    },
+    {
+      "name": "Pie",
+      "symbol": "ft",
+      "conversions": {
+        "Milímetro": 304.8,
+        "Centímetro": 30.48,
+        "Metro": 0.3048,
+        "Kilómetro": 0.0003048,
+        "Pulgada": 12,
+        "Yarda": 0.333333,
+        "Milla": 0.000189394,
+        "Milla Náutica": 0.000164579,
+        "Año Luz": 3.2217e-16,
+        "Parsec": 9.87612e-17
+      }
+    },
+    {
+      "name": "Yarda",
+      "symbol": "yd",
+      "conversions": {
+        "Milímetro": 914.4,
+        "Centímetro": 91.44,
+        "Metro": 0.9144,
+        "Kilómetro": 0.0009144,
+        "Pulgada": 36,
+        "Pie": 3,
+        "Milla": 0.000568182,
+        "Milla Náutica": 0.000493737,
+        "Año Luz": 9.6652e-16,
+        "Parsec": 2.97882e-16
+      }
+    },
+    {
+      "name": "Milla",
+      "symbol": "mi",
+      "conversions": {
+        "Milímetro": 1.60934e+6,
+        "Centímetro": 160934,
+        "Metro": 1609.34,
+        "Kilómetro": 1.60934,
+        "Pulgada": 63360,
+        "Pie": 5280,
+        "Yarda": 1760,
+        "Milla Náutica": 0.868976,
+        "Año Luz": 1.7011e-13,
+        "Parsec": 5.2155e-14
+      }
+    },
+    {
+      "name": "Milla Náutica",
+      "symbol": "nmi",
+      "conversions": {
+        "Milímetro": 1.852e+6,
+        "Centímetro": 185200,
+        "Metro": 1852,
+        "Kilómetro": 1.852,
+        "Pulgada": 72913.4,
+        "Pie": 6076.12,
+        "Yarda": 2025.37,
+        "Milla": 1.15078,
+        "Año Luz": 1.852e-13,
+        "Parsec": 5.68903e-14
+      }
+    },
+    {
+      "name": "Año Luz",
+      "symbol": "ly",
+      "conversions": {
+        "Milímetro": 9.461e+15,
+        "Centímetro": 9.461e+14,
+        "Metro": 9.461e+12,
+        "Kilómetro": 9.461e+9,
+        "Pulgada": 3.7245e+17,
+        "Pie": 3.1046e+16,
+        "Yarda": 1.0348e+16,
+        "Milla": 5.8786e+12,
+        "Milla Náutica": 5.106e+12,
+        "Parsec": 3.08568e+13
+      }
+    },
+    {
+      "name": "Parsec",
+      "symbol": "pc",
+      "conversions": {
+        "Milímetro": 3.086e+16,
+        "Centímetro": 3.086e+15,
+        "Metro": 3.086e+13,
+        "Kilómetro": 3.086e+10,
+        "Pulgada": 1.2148e+18,
+        "Pie": 1.0124e+17,
+        "Yarda": 3.3746e+16,
+        "Milla": 1.9175e+13,
+        "Milla Náutica": 1.6627e+13,
+        "Año Luz": 3.24078e+13
+      }
+    }
+  ]
+}
