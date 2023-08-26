@@ -1,0 +1,39 @@
+{
+  "text": {
+    "titles": {
+      "title": "CONVERSOR",
+      "title-currency": "MONEDA",
+      "title-temperature": "TEMPERATURA",
+      "title-weight": "PESO",
+      "title-longitude": "LONGITUD",
+      "title-time": "TIEMPO"
+    },
+    "sub-titles": {
+      "subtitle-currency": "conversor/moneda",
+      "subtitle-temperature": "conversor/temperatura",
+      "subtitle-weight": "conversor/peso",
+      "subtitle-longitude": "conversor/longitud",
+      "subtitle-time": "conversor/tiempo"
+    },
+    "labels": {
+      "lbl-insert-value": "INSERTAR UN VALOR",
+      "lbl-result": "RESULTADO",
+      "lbl-validation-message": "*Solo se aceptan valores numéricos"
+    },
+    "buttons": {
+      "btn-currency": "MONEDA",
+      "btn-temperature": "TEMPERATURA",
+      "btn-weight": "PESO",
+      "btn-longitude": "LONGITUD",
+      "btn-time": "TIEMPO",
+      "btn-convert": "CONVERTIR"
+    },
+    "combo-box": {
+      "prompt-text-currency": "Selecciona una moneda",
+      "prompt-text-temperature": "Selecciona una escala",
+      "prompt-text-weight": "Selecciona un peso",
+      "prompt-text-longitude": "Selecciona una longitud",
+      "prompt-text-time": "Selecciona una hora"
+    }
+  }
+}

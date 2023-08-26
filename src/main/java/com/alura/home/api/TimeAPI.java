@@ -1,6 +1,8 @@
 package com.alura.home.api;
 
+import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
+import com.alura.home.language.Language;
 import com.alura.home.util.Utilities;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,6 +17,9 @@ public class TimeAPI implements ApiJSONFiles {
 
     @Override
     public String getJSON() throws Exception {
+        if (Language.getLang() == Languages.ES) {
+            return new String(Files.readAllBytes(Path.of(JSON_TIME_URL_ES)));
+        }
         return new String(Files.readAllBytes(Path.of(JSON_TIME_URL_EN)));
     }
 

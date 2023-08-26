@@ -1,0 +1,39 @@
+{
+  "text": {
+    "titles": {
+      "title": "CONVERTER",
+      "title-currency": "CURRENCY",
+      "title-temperature": "TEMPERATURE",
+      "title-weight": "WEIGHT",
+      "title-longitude": "LONGITUDE",
+      "title-time": "TIME"
+    },
+    "sub-titles": {
+      "subtitle-currency": "converter/currency",
+      "subtitle-temperature": "converter/temperature",
+      "subtitle-weight": "converter/weight",
+      "subtitle-longitude": "converter/longitude",
+      "subtitle-time": "converter/time"
+    },
+    "labels": {
+      "lbl-insert-value": "INSERT A VALUE",
+      "lbl-result": "RESULT",
+      "lbl-validation-message": "*Just number values are accepted"
+    },
+    "buttons": {
+      "btn-currency": "CURRENCY",
+      "btn-temperature": "TEMPERATURE",
+      "btn-weight": "WEIGHT",
+      "btn-longitude": "LONGITUDE",
+      "btn-time": "TIME",
+      "btn-convert": "CONVERT"
+    },
+    "combo-box": {
+      "prompt-text-currency": "Select a currency",
+      "prompt-text-temperature": "Select a scale",
+      "prompt-text-weight": "Select a weight",
+      "prompt-text-longitude": "Select a longitude",
+      "prompt-text-time": "Select a time"
+    }
+  }
+}

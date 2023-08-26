@@ -3,6 +3,7 @@ package com.alura.home.controllers;
 import com.alura.home.converters.Temperature;
 import com.alura.home.exceptions.IncorrectValueException;
 import com.alura.home.interfaces.ConverterController;
+import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
 import javafx.scene.input.KeyEvent;
@@ -21,19 +22,22 @@ public class TemperatureController extends Controller implements ConverterContro
 
     @Override
     public void init() {
-        ComboBoxController.comboBoxInitializing(mc.getCbTemperature(), temperatureConverter, "SELECT A SCALE");
-        ComboBoxController.comboBoxInitializing(mc.getCbTemperatureChange(), temperatureConverter, "SELECT A SCALE");
+        ComboBoxController.comboBoxInitializing(mc.getCbTemperature(), temperatureConverter, Language.getComboBoxPrompt("prompt-text-temperature"));
+        ComboBoxController.comboBoxInitializing(mc.getCbTemperatureChange(), temperatureConverter, Language.getComboBoxPrompt("prompt-text-temperature"));
     }
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getValidationMessageTemperature(), "SCALE");
+        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getLblValidationMessage(), "scale");
+        mc.getBtnConvertTemperature().setDisable(true);
+        mc.getSubtitle().setText(Language.getSubTitle("subtitle-temperature"));
+        mc.getTitleConversor().setText(Language.getTitle("title-temperature"));
     }
 
 
     @Override
     public boolean textChangedValidation(KeyEvent e) {
-        return Utilities.validateText(mc.getInputTemperature(), mc.getValidationMessageTemperature(), mc.getBtnConvertTemperature());
+        return Utilities.validateText(mc.getInputTemperature(), mc.getLblValidationMessage(), mc.getBtnConvertTemperature());
     }
 
     @Override
@@ -43,9 +47,11 @@ public class TemperatureController extends Controller implements ConverterContro
         String amount = mc.getInputTemperature().getText();
 
         try {
-            if (convertFrom.contains("SELECT"))
+            if (convertFrom.toUpperCase().contains("SELECT"))
                 throw new IncorrectValueException("Select the origin scale to convert.");
-            if (convertTo.contains("SELECT")) throw new IncorrectValueException("Select the destiny scale to convert.");
+            if (convertTo.toUpperCase().contains("SELECT"))
+                throw new IncorrectValueException("Select the destiny scale to convert.");
+
             if (textChangedValidation(null)) {
                 Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
                 Utilities.showResult(result, mc.getInputTemperatureResult());
@@ -53,7 +59,7 @@ public class TemperatureController extends Controller implements ConverterContro
                 mc.getInputTemperatureResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("SELECT A SCALE is an incorrect value", ex.getMessage());
+            PopupWindow.alertMessage("'Select a scale' is an incorrect value", ex.getMessage());
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Temperature implements Converter {
-    TemperatureConversionTypes conversionType;
+    private TemperatureConversionTypes conversionType;
 
     @Override
     public List<String> insertComboBoxValues() {
@@ -45,7 +45,7 @@ public class Temperature implements Converter {
             case KELVIN_TO_FAHRENHEIT:
                 return kelvinToFahrenheit(amountNum);
             default:
-                return Double.parseDouble(amount);
+                return amountNum;
         }
     }
 

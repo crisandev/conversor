@@ -43,18 +43,6 @@ public abstract class Controller {
     private Pane containerCurrency;
 
     @FXML
-    private Text titleCurrency;
-
-    @FXML
-    private Text subtitleCurrency;
-
-    @FXML
-    private Label lblInsertValue;
-
-    @FXML
-    private Label lblResult;
-
-    @FXML
     private TextField inputCurrency;
 
     @FXML
@@ -70,16 +58,7 @@ public abstract class Controller {
     private Button btnConvertCurrency;
 
     @FXML
-    private Label validationMessageCurrency;
-
-    @FXML
     private Pane containerTemperature;
-
-    @FXML
-    private Text titleTemperature;
-
-    @FXML
-    private Text subtitleTemperature;
 
     @FXML
     private TextField inputTemperature;
@@ -97,16 +76,7 @@ public abstract class Controller {
     private Button btnConvertTemperature;
 
     @FXML
-    private Label validationMessageTemperature;
-
-    @FXML
     private Pane containerWeight;
-
-    @FXML
-    private Text titleWeight;
-
-    @FXML
-    private Text subtitleWeight;
 
     @FXML
     private TextField inputWeight;
@@ -124,16 +94,7 @@ public abstract class Controller {
     private Button btnConvertWeight;
 
     @FXML
-    private Label validationMessageWeight;
-
-    @FXML
     private Pane containerLongitude;
-
-    @FXML
-    private Text titleLongitude;
-
-    @FXML
-    private Text subtitleLongitude;
 
     @FXML
     private TextField inputLongitude;
@@ -151,16 +112,7 @@ public abstract class Controller {
     private Button btnConvertLongitude;
 
     @FXML
-    private Label validationMessageLongitude;
-
-    @FXML
     private Pane containerTime;
-
-    @FXML
-    private Text titleTime;
-
-    @FXML
-    private Text subtitleTime;
 
     @FXML
     private TextField inputTime;
@@ -178,10 +130,23 @@ public abstract class Controller {
     private Button btnConvertTime;
 
     @FXML
-    private Label validationMessageTime;
+    private ComboBox<String> cbLanguages;
 
     @FXML
-    private ComboBox<String> cbLanguages;
+    private Label lblInsertValue;
+
+    @FXML
+    private Label lblResult;
+
+    @FXML
+    private Text titleConversor;
+
+    @FXML
+    private Text subtitle;
+
+    @FXML
+    private Label lblValidationMessage;
+
     private Button currentBtn;
     private TextField currentTextField;
 
@@ -199,13 +164,6 @@ public abstract class Controller {
     //GETTER AND SETTER PROPERTIES
     //GETTER AND SETTER PROPERTIES
 
-    public ComboBox<String> getCbLanguages() {
-        return cbLanguages;
-    }
-
-    public void setCbLanguages(ComboBox<String> cbLanguages) {
-        this.cbLanguages = cbLanguages;
-    }
 
     public AnchorPane getLayout() {
         return layout;
@@ -231,35 +189,60 @@ public abstract class Controller {
         this.sidebar = sidebar;
     }
 
+    public Text getTitle() {
+        return title;
+    }
 
+    public void setTitle(Text title) {
+        this.title = title;
+    }
 
     public Button getBtnCurrency() {
         return btnCurrency;
     }
 
+    public void setBtnCurrency(Button btnCurrency) {
+        this.btnCurrency = btnCurrency;
+    }
 
     public Button getBtnTemperature() {
         return btnTemperature;
     }
 
+    public void setBtnTemperature(Button btnTemperature) {
+        this.btnTemperature = btnTemperature;
+    }
 
     public Button getBtnWeight() {
         return btnWeight;
     }
 
+    public void setBtnWeight(Button btnWeight) {
+        this.btnWeight = btnWeight;
+    }
 
     public Button getBtnLongitude() {
         return btnLongitude;
     }
 
+    public void setBtnLongitude(Button btnLongitude) {
+        this.btnLongitude = btnLongitude;
+    }
 
     public Button getBtnTime() {
         return btnTime;
     }
 
+    public void setBtnTime(Button btnTime) {
+        this.btnTime = btnTime;
+    }
 
     public Pane getContainerCurrency() {
         return containerCurrency;
+    }
+
+    public void setContainerCurrency(Pane containerCurrency) {
+        this.containerCurrency = containerCurrency;
     }
 
     public TextField getInputCurrency() {
@@ -302,36 +285,12 @@ public abstract class Controller {
         this.btnConvertCurrency = btnConvertCurrency;
     }
 
-    public Label getValidationMessageCurrency() {
-        return validationMessageCurrency;
-    }
-
-    public void setValidationMessageCurrency(Label validationMessageCurrency) {
-        this.validationMessageCurrency = validationMessageCurrency;
-    }
-
     public Pane getContainerTemperature() {
         return containerTemperature;
     }
 
     public void setContainerTemperature(Pane containerTemperature) {
         this.containerTemperature = containerTemperature;
-    }
-
-    public Text getTitleTemperature() {
-        return titleTemperature;
-    }
-
-    public void setTitleTemperature(Text titleTemperature) {
-        this.titleTemperature = titleTemperature;
-    }
-
-    public Text getSubtitleTemperature() {
-        return subtitleTemperature;
-    }
-
-    public void setSubtitleTemperature(Text subtitleTemperature) {
-        this.subtitleTemperature = subtitleTemperature;
     }
 
     public TextField getInputTemperature() {
@@ -374,100 +333,196 @@ public abstract class Controller {
         this.btnConvertTemperature = btnConvertTemperature;
     }
 
-    public Label getValidationMessageTemperature() {
-        return validationMessageTemperature;
-    }
-
-
     public Pane getContainerWeight() {
         return containerWeight;
+    }
+
+    public void setContainerWeight(Pane containerWeight) {
+        this.containerWeight = containerWeight;
     }
 
     public TextField getInputWeight() {
         return inputWeight;
     }
 
+    public void setInputWeight(TextField inputWeight) {
+        this.inputWeight = inputWeight;
+    }
 
     public TextField getInputWeightResult() {
         return inputWeightResult;
+    }
+
+    public void setInputWeightResult(TextField inputWeightResult) {
+        this.inputWeightResult = inputWeightResult;
     }
 
     public ComboBox<String> getCbWeights() {
         return cbWeights;
     }
 
+    public void setCbWeights(ComboBox<String> cbWeights) {
+        this.cbWeights = cbWeights;
+    }
+
     public ComboBox<String> getCbWeightChange() {
         return cbWeightChange;
+    }
+
+    public void setCbWeightChange(ComboBox<String> cbWeightChange) {
+        this.cbWeightChange = cbWeightChange;
     }
 
     public Button getBtnConvertWeight() {
         return btnConvertWeight;
     }
 
-    public Label getValidationMessageWeight() {
-        return validationMessageWeight;
+    public void setBtnConvertWeight(Button btnConvertWeight) {
+        this.btnConvertWeight = btnConvertWeight;
     }
 
     public Pane getContainerLongitude() {
         return containerLongitude;
     }
 
+    public void setContainerLongitude(Pane containerLongitude) {
+        this.containerLongitude = containerLongitude;
+    }
+
     public TextField getInputLongitude() {
         return inputLongitude;
     }
 
+    public void setInputLongitude(TextField inputLongitude) {
+        this.inputLongitude = inputLongitude;
+    }
 
     public TextField getInputLongitudeResult() {
         return inputLongitudeResult;
+    }
+
+    public void setInputLongitudeResult(TextField inputLongitudeResult) {
+        this.inputLongitudeResult = inputLongitudeResult;
     }
 
     public ComboBox<String> getCbLongitude() {
         return cbLongitude;
     }
 
+    public void setCbLongitude(ComboBox<String> cbLongitude) {
+        this.cbLongitude = cbLongitude;
+    }
 
     public ComboBox<String> getCbLongitudeChange() {
         return cbLongitudeChange;
+    }
+
+    public void setCbLongitudeChange(ComboBox<String> cbLongitudeChange) {
+        this.cbLongitudeChange = cbLongitudeChange;
     }
 
     public Button getBtnConvertLongitude() {
         return btnConvertLongitude;
     }
 
-    public Label getValidationMessageLongitude() {
-        return validationMessageLongitude;
+    public void setBtnConvertLongitude(Button btnConvertLongitude) {
+        this.btnConvertLongitude = btnConvertLongitude;
     }
-
 
     public Pane getContainerTime() {
         return containerTime;
     }
 
+    public void setContainerTime(Pane containerTime) {
+        this.containerTime = containerTime;
+    }
 
     public TextField getInputTime() {
         return inputTime;
     }
 
+    public void setInputTime(TextField inputTime) {
+        this.inputTime = inputTime;
+    }
 
     public TextField getInputTimeResult() {
         return inputTimeResult;
     }
 
+    public void setInputTimeResult(TextField inputTimeResult) {
+        this.inputTimeResult = inputTimeResult;
+    }
 
     public ComboBox<String> getCbTimes() {
         return cbTimes;
+    }
+
+    public void setCbTimes(ComboBox<String> cbTimes) {
+        this.cbTimes = cbTimes;
     }
 
     public ComboBox<String> getCbTimesChange() {
         return cbTimesChange;
     }
 
+    public void setCbTimesChange(ComboBox<String> cbTimesChange) {
+        this.cbTimesChange = cbTimesChange;
+    }
+
     public Button getBtnConvertTime() {
         return btnConvertTime;
     }
 
-    public Label getValidationMessageTime() {
-        return validationMessageTime;
+    public void setBtnConvertTime(Button btnConvertTime) {
+        this.btnConvertTime = btnConvertTime;
+    }
+
+    public ComboBox<String> getCbLanguages() {
+        return cbLanguages;
+    }
+
+    public void setCbLanguages(ComboBox<String> cbLanguages) {
+        this.cbLanguages = cbLanguages;
+    }
+
+    public Label getLblInsertValue() {
+        return lblInsertValue;
+    }
+
+    public void setLblInsertValue(Label lblInsertValue) {
+        this.lblInsertValue = lblInsertValue;
+    }
+
+    public Label getLblResult() {
+        return lblResult;
+    }
+
+    public void setLblResult(Label lblResult) {
+        this.lblResult = lblResult;
+    }
+
+    public Text getTitleConversor() {
+        return titleConversor;
+    }
+
+    public void setTitleConversor(Text titleConversor) {
+        this.titleConversor = titleConversor;
+    }
+
+    public Text getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(Text subtitle) {
+        this.subtitle = subtitle;
+    }
+
+    public Label getLblValidationMessage() {
+        return lblValidationMessage;
+    }
+
+    public void setLblValidationMessage(Label lblValidationMessage) {
+        this.lblValidationMessage = lblValidationMessage;
     }
 
     public Button getCurrentBtn() {
@@ -478,4 +533,11 @@ public abstract class Controller {
         this.currentBtn = currentBtn;
     }
 
+    public TextField getCurrentTextField() {
+        return currentTextField;
+    }
+
+    public void setCurrentTextField(TextField currentTextField) {
+        this.currentTextField = currentTextField;
+    }
 }

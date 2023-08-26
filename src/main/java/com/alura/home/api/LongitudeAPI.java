@@ -1,6 +1,8 @@
 package com.alura.home.api;
 
+import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
+import com.alura.home.language.Language;
 import com.alura.home.util.Utilities;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,6 +19,9 @@ public class LongitudeAPI implements ApiJSONFiles {
 
     @Override
     public String getJSON() throws Exception {
+        if (Languages.ES == Language.getLang()) {
+            return new String(Files.readAllBytes(Path.of(JSON_LONGITUDE_URL_ES)));
+        }
         return new String(Files.readAllBytes(Path.of(JSON_LONGITUDE_URL_EN)));
     }
 

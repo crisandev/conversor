@@ -39,9 +39,9 @@ public class ComboBoxController {
             protected void updateItem(String item, boolean empty) {
                 setText(item);
                 setTextFill(Color.web("#8cb0d4"));
-                setBackground(new Background(new BackgroundFill(Color.web("#1b2942"), new CornerRadii(0), new Insets(-0.5))));
                 setStyle("-fx-font-size: 18px; " + pad);
                 setCursor(Cursor.HAND);
+                comboBox.setStyle("-fx-background-color: #1b2942;" + "-fx-border-color: #0a1229;");
             }
         });
     }

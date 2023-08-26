@@ -78,28 +78,8 @@
         </VBox>
       <Pane fx:id="containerCurrency" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0">
          <children>
-            <Text fx:id="titleCurrency" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENCY" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="subtitleCurrency" fill="#2b75c4bd" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/currencies" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT" size="18.0" />
-               </font>
-            </Text>
             <Pane layoutY="199.0" prefHeight="401.0" prefWidth="645.0" style="-fx-background-color: #1b2942;">
                <children>
-                  <Label fx:id="lblInsertValue" alignment="TOP_RIGHT" layoutX="77.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblResult" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="201.0" prefHeight="27.0" prefWidth="123.0" text="RESULT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
                   <TextField fx:id="inputCurrency" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onCurrencyTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
@@ -138,7 +118,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <Button fx:id="btnConvertCurrency" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertCurrency" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
+                  <Button fx:id="btnConvertCurrency" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertCurrency" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
                      <font>
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
@@ -146,11 +126,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="validationMessageCurrency" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="34.0" layoutY="156.0" prefHeight="21.0" prefWidth="231.0" textFill="RED">
-                     <font>
-                        <Font name="Gill Sans MT" size="17.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>
@@ -160,28 +135,8 @@
       </Pane>
       <Pane fx:id="containerTemperature" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
-            <Text fx:id="titleTemperature" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEMPERATURE" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="subtitleTemperature" fill="#2b75c4bd" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/temperature" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT" size="18.0" />
-               </font>
-            </Text>
             <Pane layoutY="199.0" prefHeight="401.0" prefWidth="645.0" style="-fx-background-color: #1b2942;">
                <children>
-                  <Label fx:id="lblInsertValue" alignment="TOP_RIGHT" layoutX="77.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblResult" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="201.0" prefHeight="27.0" prefWidth="123.0" text="RESULT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
                   <TextField fx:id="inputTemperature" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTemperatureTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
@@ -220,7 +175,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <Button fx:id="btnConvertTemperature" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertTemperature" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
+                  <Button fx:id="btnConvertTemperature" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertTemperature" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
                      <font>
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
@@ -228,39 +183,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="validationMessageTemperature" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="34.0" layoutY="156.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" visible="false">
-                     <font>
-                        <Font name="Gill Sans MT" size="17.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
       <Pane fx:id="containerWeight" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
-            <Text fx:id="titleWeight" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="subtitleWeight" fill="#2b75c4bd" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/weight" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT" size="18.0" />
-               </font>
-            </Text>
             <Pane layoutY="199.0" prefHeight="401.0" prefWidth="645.0" style="-fx-background-color: #1b2942;">
                <children>
-                  <Label alignment="TOP_RIGHT" layoutX="77.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="201.0" prefHeight="27.0" prefWidth="123.0" text="RESULT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
                   <TextField fx:id="inputWeight" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onWeightTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
@@ -299,7 +229,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <Button fx:id="btnConvertWeight" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertWeight" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
+                  <Button fx:id="btnConvertWeight" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertWeight" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
                      <font>
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
@@ -307,39 +237,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="validationMessageWeight" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="34.0" layoutY="156.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" visible="false">
-                     <font>
-                        <Font name="Gill Sans MT" size="17.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
       <Pane fx:id="containerLongitude" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
-            <Text fx:id="titleLongitude" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LONGITUDE" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="subtitleLongitude" fill="#2b75c4bd" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/longitude" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT" size="18.0" />
-               </font>
-            </Text>
             <Pane layoutY="199.0" prefHeight="401.0" prefWidth="645.0" style="-fx-background-color: #1b2942;">
                <children>
-                  <Label alignment="TOP_RIGHT" layoutX="77.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="201.0" prefHeight="27.0" prefWidth="123.0" text="RESULT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
                   <TextField fx:id="inputLongitude" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onLongitudeTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
@@ -378,7 +283,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <Button fx:id="btnConvertLongitude" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertLongitude" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
+                  <Button fx:id="btnConvertLongitude" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertLongitude" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
                      <font>
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
@@ -386,39 +291,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="validationMessageLongitude" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="34.0" layoutY="156.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" visible="false">
-                     <font>
-                        <Font name="Gill Sans MT" size="17.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
       <Pane fx:id="containerTime" layoutX="380.0" layoutY="29.0" prefHeight="607.0" prefWidth="650.0" visible="false">
          <children>
-            <Text fx:id="titleTime" fill="#1874db" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="subtitleTime" fill="#2b75c4bd" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/time" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans MT" size="18.0" />
-               </font>
-            </Text>
             <Pane layoutY="199.0" prefHeight="401.0" prefWidth="645.0" style="-fx-background-color: #1b2942;">
                <children>
-                  <Label alignment="TOP_RIGHT" layoutX="77.0" layoutY="63.0" prefHeight="27.0" prefWidth="188.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="201.0" prefHeight="27.0" prefWidth="123.0" text="RESULT" textFill="#8cb0d4">
-                     <font>
-                        <Font name="Gill Sans MT" size="22.0" />
-                     </font>
-                  </Label>
                   <TextField fx:id="inputTime" alignment="TOP_RIGHT" layoutX="17.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" onKeyTyped="#onTimeTextChanged" prefHeight="55.0" prefWidth="249.0" promptText="0.0" style="-fx-background-color: #1b2942; -fx-border-color: #0a1229; -fx-border-width: 2; -fx-text-fill: #8cb0d4;">
                      <opaqueInsets>
                         <Insets />
@@ -457,7 +337,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <Button fx:id="btnConvertTime" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertTime" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
+                  <Button fx:id="btnConvertTime" disable="true" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#convertTime" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1874db;" text="CONVERT" textFill="#0a1229">
                      <font>
                         <Font name="Gill Sans MT" size="22.0" />
                      </font>
@@ -465,16 +345,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="validationMessageTime" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="34.0" layoutY="156.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" visible="false">
-                     <font>
-                        <Font name="Gill Sans MT" size="17.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <ComboBox fx:id="cbLanguages" layoutX="875.0" layoutY="23.0" prefWidth="150.0" style="-fx-background-color: #1b2942;">
+      <ComboBox fx:id="cbLanguages" layoutX="875.0" layoutY="23.0" onAction="#changeCurrentLanguage" prefWidth="150.0" style="-fx-background-color: #1b2942;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -482,5 +357,30 @@
             <Insets right="10.0" />
          </padding>
       </ComboBox>
+      <Label fx:id="lblInsertValue" alignment="TOP_RIGHT" layoutX="395.0" layoutY="295.0" prefHeight="27.0" prefWidth="249.0" text="INSERT A VALUE" textAlignment="RIGHT" textFill="#8cb0d4">
+         <font>
+            <Font name="Gill Sans MT" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblResult" alignment="CENTER_RIGHT" layoutX="456.0" layoutY="433.0" prefHeight="27.0" prefWidth="187.0" text="RESULT" textFill="#8cb0d4">
+         <font>
+            <Font name="Gill Sans MT" size="22.0" />
+         </font>
+      </Label>
+      <Text fx:id="titleConversor" fill="#1874db" layoutX="379.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENCY" textAlignment="CENTER">
+         <font>
+            <Font name="Gill Sans MT Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="subtitle" fill="#2b75c4bd" layoutX="380.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="converter/currency" textAlignment="CENTER">
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblValidationMessage" alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="415.0" layoutY="389.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" visible="false">
+         <font>
+            <Font name="Gill Sans MT" size="17.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

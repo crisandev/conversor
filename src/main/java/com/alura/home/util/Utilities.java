@@ -28,8 +28,8 @@ public class Utilities {
             return true;
         } catch (NumberFormatException ex) {
             lblMessage.setVisible(true);
-            btn.setDisable(true);
             lblMessage.setText("*Just number values are accepted");
+            btn.setDisable(true);
         } catch (NullPointerException ex) {
             lblMessage.setVisible(false);
             btn.setDisable(true);
@@ -52,8 +52,8 @@ public class Utilities {
     }
 
     public static void reset(ComboBox<String> cb, ComboBox<String> cbChange, TextField input, TextField inputResult, Label validationMessage, String measure) {
-        cb.getSelectionModel().select("SELECT A " + measure);
-        cbChange.getSelectionModel().select("SELECT A " + measure);
+        cb.getSelectionModel().select("Select a " + measure);
+        cbChange.getSelectionModel().select("Select a " + measure);
         input.setText(null);
         input.setPromptText("0.0");
         inputResult.setText(null);
@@ -73,9 +73,9 @@ public class Utilities {
     }
 
     public static List<String> showCurrenciesList(HashMap<String, String> hashMap) {
-        List<String> listCurrencies = new ArrayList<>();
+        List<String> listCurrencies = new LinkedList<>();
         for (String key : hashMap.keySet()) {
-            String formatString = key.toUpperCase() + " - " + hashMap.get(key).toUpperCase();
+            String formatString = key.toUpperCase() + " - " + hashMap.get(key);
             listCurrencies.add(formatString);
         }
         listCurrencies.sort(String::compareToIgnoreCase);
@@ -111,13 +111,8 @@ public class Utilities {
 
     public static List<String> showLanguagesList() {
         List<String> list = new LinkedList<>();
-        if (Language.getLang() == Languages.ES.name()) {
-            list.add("Español");
-            list.add("Inglés");
-        } else {
-            list.add("English");
-            list.add("Spanish");
-        }
+        list.add("English");
+        list.add("Español");
         return list;
     }
 }
