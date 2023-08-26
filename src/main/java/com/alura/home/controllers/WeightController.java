@@ -44,9 +44,9 @@ public class WeightController extends ConverterController {
         String amount = mc.getInputWeight().getText();
 
         try {
-            if (convertFrom.toUpperCase().contains("SELECT"))
+            if (convertFrom.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the origin weight to convert.");
-            if (convertTo.toUpperCase().contains("SELECT"))
+            if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny weight to convert.");
 
             if (textChangedValidation()) {

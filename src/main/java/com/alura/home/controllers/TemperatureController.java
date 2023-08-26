@@ -44,9 +44,9 @@ public class TemperatureController extends ConverterController {
         String amount = mc.getInputTemperature().getText();
 
         try {
-            if (convertFrom.toUpperCase().contains("SELECT"))
+            if (convertFrom.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the origin scale to convert.");
-            if (convertTo.toUpperCase().contains("SELECT"))
+            if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny scale to convert.");
 
             if (textChangedValidation()) {

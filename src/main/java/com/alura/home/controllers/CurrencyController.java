@@ -46,9 +46,9 @@ public class CurrencyController extends ConverterController {
         String amount = mc.getInputCurrency().getText();
 
         try {
-            if (convertFrom.toUpperCase().contains("SELECT"))
+            if (convertFrom.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the origin currency to convert.");
-            if (convertTo.toUpperCase().contains("SELECT"))
+            if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny currency to convert.");
 
             if (textChangedValidation()) {

@@ -43,9 +43,9 @@ public class LongitudeController extends ConverterController {
         String amount = mc.getInputLongitude().getText();
 
         try {
-            if (convertFrom.toUpperCase().contains("SELECT"))
+            if (convertFrom.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the origin longitude to convert.");
-            if (convertTo.toUpperCase().contains("SELECT"))
+            if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny longitude to convert.");
 
             if (textChangedValidation()) {

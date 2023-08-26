@@ -45,9 +45,9 @@ public class TimeController extends ConverterController {
         String amount = mc.getInputTime().getText();
 
         try {
-            if (convertFrom.toUpperCase().contains("SELECT"))
+            if (convertFrom.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the origin time to convert.");
-            if (convertTo.toUpperCase().contains("SELECT"))
+            if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny time to convert.");
 
             if (textChangedValidation()) {
