@@ -1,8 +1,5 @@
 package com.alura.home.util;
 
-import com.alura.home.api.WeightAPI;
-import com.alura.home.controllers.MainController;
-import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
 import com.alura.home.language.Language;
 import javafx.scene.control.Button;
@@ -11,8 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.nio.file.NoSuchFileException;
 import java.text.NumberFormat;
 import java.util.*;
 
@@ -28,7 +23,7 @@ public class Utilities {
             return true;
         } catch (NumberFormatException ex) {
             lblMessage.setVisible(true);
-            lblMessage.setText("*Just number values are accepted");
+            lblMessage.setText(Language.getLabel("lbl-validation-message"));
             btn.setDisable(true);
         } catch (NullPointerException ex) {
             lblMessage.setVisible(false);
@@ -51,9 +46,9 @@ public class Utilities {
         return null;
     }
 
-    public static void reset(ComboBox<String> cb, ComboBox<String> cbChange, TextField input, TextField inputResult, Label validationMessage, String measure) {
-        cb.getSelectionModel().select("Select a " + measure);
-        cbChange.getSelectionModel().select("Select a " + measure);
+    public static void reset(ComboBox<String> cb, ComboBox<String> cbChange, TextField input, TextField inputResult, Label validationMessage, String promptText) {
+        cb.getSelectionModel().select(promptText);
+        cbChange.getSelectionModel().select(promptText);
         input.setText(null);
         input.setPromptText("0.0");
         inputResult.setText(null);

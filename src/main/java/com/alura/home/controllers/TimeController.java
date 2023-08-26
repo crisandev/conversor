@@ -2,39 +2,38 @@ package com.alura.home.controllers;
 
 import com.alura.home.converters.Time;
 import com.alura.home.exceptions.IncorrectValueException;
-import com.alura.home.interfaces.ConverterController;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
-import javafx.scene.input.KeyEvent;
 
-public class TimeController extends Controller implements ConverterController {
+public class TimeController extends ConverterController {
 
-
-    private MainController mc;
     private final Time timeController = new Time();
 
     public TimeController(MainController mainController) {
         this.mc = mainController;
+        this.promptText = Language.getComboBoxPrompt("prompt-text-time");
+        this.title = Language.getTitle("title-time");
+        this.subtitle = Language.getSubTitle("subtitle-time");
     }
 
     @Override
     public void init() {
-        ComboBoxController.comboBoxInitializing(mc.getCbTimes(), timeController, Language.getComboBoxPrompt("prompt-text-time"));
-        ComboBoxController.comboBoxInitializing(mc.getCbTimesChange(), timeController, Language.getComboBoxPrompt("prompt-text-time"));
+        ComboBoxController.comboBoxInitializing(mc.getCbTimes(), timeController, promptText);
+        ComboBoxController.comboBoxInitializing(mc.getCbTimesChange(), timeController, promptText);
     }
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbTimes(), mc.getCbTimesChange(), mc.getInputTime(), mc.getInputTimeResult(), mc.getLblValidationMessage(), "time");
+        Utilities.reset(mc.getCbTimes(), mc.getCbTimesChange(), mc.getInputTime(), mc.getInputTimeResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-time"));
         mc.getBtnConvertTime().setDisable(true);
-        mc.getSubtitle().setText(Language.getSubTitle("subtitle-time"));
-        mc.getTitleConversor().setText(Language.getTitle("title-time"));
+        mc.getSubtitle().setText(title);
+        mc.getTitleConversor().setText(subtitle);
     }
 
 
     @Override
-    public boolean textChangedValidation(KeyEvent event) {
+    public boolean textChangedValidation() {
         return Utilities.validateText(mc.getInputTime(), mc.getLblValidationMessage(), mc.getBtnConvertTime());
 
     }
@@ -51,7 +50,7 @@ public class TimeController extends Controller implements ConverterController {
             if (convertTo.toUpperCase().contains("SELECT"))
                 throw new IncorrectValueException("Select the destiny time to convert.");
 
-            if (textChangedValidation(null)) {
+            if (textChangedValidation()) {
                 Double result = timeController.convert(convertFrom, convertTo, amount);
                 Utilities.showResult(result, mc.getInputTimeResult());
             } else {

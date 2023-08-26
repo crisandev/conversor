@@ -2,41 +2,38 @@ package com.alura.home.controllers;
 
 import com.alura.home.converters.Temperature;
 import com.alura.home.exceptions.IncorrectValueException;
-import com.alura.home.interfaces.ConverterController;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
-import javafx.scene.input.KeyEvent;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Queue;
+public class TemperatureController extends ConverterController {
 
-public class TemperatureController extends Controller implements ConverterController {
     private final Temperature temperatureConverter = new Temperature();
-    private MainController mc;
 
     public TemperatureController(MainController mainController) {
         this.mc = mainController;
+        this.promptText = Language.getComboBoxPrompt("prompt-text-temperature");
+        this.title = Language.getTitle("title-temperature");
+        this.subtitle = Language.getSubTitle("subtitle-temperature");
     }
 
     @Override
     public void init() {
-        ComboBoxController.comboBoxInitializing(mc.getCbTemperature(), temperatureConverter, Language.getComboBoxPrompt("prompt-text-temperature"));
-        ComboBoxController.comboBoxInitializing(mc.getCbTemperatureChange(), temperatureConverter, Language.getComboBoxPrompt("prompt-text-temperature"));
+        ComboBoxController.comboBoxInitializing(mc.getCbTemperature(), temperatureConverter, promptText);
+        ComboBoxController.comboBoxInitializing(mc.getCbTemperatureChange(), temperatureConverter, promptText);
     }
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getLblValidationMessage(), "scale");
+        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-temperature"));
         mc.getBtnConvertTemperature().setDisable(true);
-        mc.getSubtitle().setText(Language.getSubTitle("subtitle-temperature"));
-        mc.getTitleConversor().setText(Language.getTitle("title-temperature"));
+        mc.getSubtitle().setText(subtitle);
+        mc.getTitleConversor().setText(title);
     }
 
 
     @Override
-    public boolean textChangedValidation(KeyEvent e) {
+    public boolean textChangedValidation() {
         return Utilities.validateText(mc.getInputTemperature(), mc.getLblValidationMessage(), mc.getBtnConvertTemperature());
     }
 
@@ -52,7 +49,7 @@ public class TemperatureController extends Controller implements ConverterContro
             if (convertTo.toUpperCase().contains("SELECT"))
                 throw new IncorrectValueException("Select the destiny scale to convert.");
 
-            if (textChangedValidation(null)) {
+            if (textChangedValidation()) {
                 Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
                 Utilities.showResult(result, mc.getInputTemperatureResult());
             } else {

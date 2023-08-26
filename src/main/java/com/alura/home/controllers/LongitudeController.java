@@ -2,38 +2,37 @@ package com.alura.home.controllers;
 
 import com.alura.home.converters.Longitude;
 import com.alura.home.exceptions.IncorrectValueException;
-import com.alura.home.interfaces.ConverterController;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
-import javafx.scene.input.KeyEvent;
 
-public class LongitudeController extends Controller implements ConverterController {
-
-    private MainController mc;
+public class LongitudeController extends ConverterController {
     private final Longitude longitudeController = new Longitude();
 
     public LongitudeController(MainController mainController) {
         this.mc = mainController;
+        this.promptText = Language.getComboBoxPrompt("prompt-text-longitude");
+        this.title = Language.getTitle("title-longitude");
+        this.subtitle = Language.getSubTitle("subtitle-longitude");
     }
 
     @Override
     public void init() {
-        ComboBoxController.comboBoxInitializing(mc.getCbLongitude(), longitudeController, Language.getComboBoxPrompt("prompt-text-longitude"));
-        ComboBoxController.comboBoxInitializing(mc.getCbLongitudeChange(), longitudeController, Language.getComboBoxPrompt("prompt-text-longitude"));
+        ComboBoxController.comboBoxInitializing(mc.getCbLongitude(), longitudeController, promptText);
+        ComboBoxController.comboBoxInitializing(mc.getCbLongitudeChange(), longitudeController, promptText);
     }
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbLongitude(), mc.getCbLongitudeChange(), mc.getInputLongitude(), mc.getInputLongitudeResult(), mc.getLblValidationMessage(), "longitude");
+        Utilities.reset(mc.getCbLongitude(), mc.getCbLongitudeChange(), mc.getInputLongitude(), mc.getInputLongitudeResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-longitude"));
         mc.getBtnConvertLongitude().setDisable(true);
-        mc.getSubtitle().setText(Language.getSubTitle("subtitle-longitude"));
-        mc.getTitleConversor().setText(Language.getTitle("title-longitude"));
+        mc.getSubtitle().setText(subtitle);
+        mc.getTitleConversor().setText(title);
     }
 
 
     @Override
-    public boolean textChangedValidation(KeyEvent e) {
+    public boolean textChangedValidation() {
         return Utilities.validateText(mc.getInputLongitude(), mc.getLblValidationMessage(), mc.getBtnConvertLongitude());
     }
 
@@ -49,7 +48,7 @@ public class LongitudeController extends Controller implements ConverterControll
             if (convertTo.toUpperCase().contains("SELECT"))
                 throw new IncorrectValueException("Select the destiny longitude to convert.");
 
-            if (textChangedValidation(null)) {
+            if (textChangedValidation()) {
                 Double result = longitudeController.convert(convertFrom, convertTo, amount);
                 Utilities.showResult(result, mc.getInputLongitudeResult());
             } else {

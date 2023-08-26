@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,7 +27,7 @@ public class MainController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cbLanguages();
-        changeLanguage();
+        initControllers();
     }
 
     private void initControllers() {
@@ -166,27 +165,27 @@ public class MainController extends Controller implements Initializable {
 
     @FXML
     public void onCurrencyTextChanged(KeyEvent e) {
-        currencyController.textChangedValidation(e);
+        currencyController.textChangedValidation();
     }
 
     @FXML
     public void onTemperatureTextChanged(KeyEvent e) {
-        temperatureController.textChangedValidation(e);
+        temperatureController.textChangedValidation();
     }
 
     @FXML
     public void onWeightTextChanged(KeyEvent e) {
-        weightController.textChangedValidation(e);
+        weightController.textChangedValidation();
     }
 
     @FXML
     public void onLongitudeTextChanged(KeyEvent e) {
-        longitudeController.textChangedValidation(e);
+        longitudeController.textChangedValidation();
     }
 
     @FXML
     public void onTimeTextChanged(KeyEvent e) {
-        timeController.textChangedValidation(e);
+        timeController.textChangedValidation();
     }
 
 
