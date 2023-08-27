@@ -4,6 +4,8 @@ public abstract class ConverterController {
     protected String promptText;
     protected String title;
     protected String subtitle;
+    protected String originText;
+    protected String destinyText;
     protected MainController mc;
 
     public abstract void init();

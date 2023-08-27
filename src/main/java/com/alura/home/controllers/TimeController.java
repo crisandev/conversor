@@ -25,10 +25,10 @@ public class TimeController extends ConverterController {
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbTimes(), mc.getCbTimesChange(), mc.getInputTime(), mc.getInputTimeResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-time"));
+        Utilities.reset(mc.getCbTimes(), mc.getCbTimesChange(), mc.getInputTime(), mc.getInputTimeResult(), mc.getLblValidationMessage(), promptText);
         mc.getBtnConvertTime().setDisable(true);
-        mc.getSubtitle().setText(title);
-        mc.getTitleConversor().setText(subtitle);
+        mc.getSubtitle().setText(subtitle);
+        mc.getTitleConversor().setText(title);
     }
 
 
@@ -46,9 +46,9 @@ public class TimeController extends ConverterController {
 
         try {
             if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the origin time to convert.");
+                throw new IncorrectValueException("");
             if (convertTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the destiny time to convert.");
+                throw new IncorrectValueException("");
 
             if (textChangedValidation()) {
                 Double result = timeController.convert(convertFrom, convertTo, amount);

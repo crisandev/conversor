@@ -1,6 +1,7 @@
 package com.alura.home.controllers;
 
 import com.alura.home.converters.Longitude;
+import com.alura.home.enums.Languages;
 import com.alura.home.exceptions.IncorrectValueException;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
@@ -44,9 +45,9 @@ public class LongitudeController extends ConverterController {
 
         try {
             if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the origin longitude to convert.");
+                throw new IncorrectValueException("");
             if (convertTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the destiny longitude to convert.");
+                throw new IncorrectValueException(".");
 
             if (textChangedValidation()) {
                 Double result = longitudeController.convert(convertFrom, convertTo, amount);
@@ -55,7 +56,8 @@ public class LongitudeController extends ConverterController {
                 mc.getInputLongitudeResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("'Select a longitude' is an incorrect value", ex.getMessage());
+            String incorrectValue = Language.getLang() == Languages.ES ? "is an incorrect value" : "es un valor incorrecto";
+            PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }
 }

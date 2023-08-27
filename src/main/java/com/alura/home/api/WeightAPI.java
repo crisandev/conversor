@@ -4,7 +4,6 @@ import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
 import com.alura.home.language.Language;
 import com.alura.home.util.Utilities;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.nio.file.Files;

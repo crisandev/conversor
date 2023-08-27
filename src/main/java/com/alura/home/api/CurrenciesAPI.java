@@ -4,7 +4,6 @@ import com.alura.home.enums.Languages;
 import com.alura.home.interfaces.ApiJSONFiles;
 import com.alura.home.language.Language;
 import org.json.JSONObject;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;

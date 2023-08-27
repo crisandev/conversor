@@ -34,7 +34,7 @@ public class ComboBoxController {
             }
         });
 
-        comboBox.setButtonCell(new ListCell<String>() {
+        comboBox.setButtonCell(new ListCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 setText(item);
@@ -51,7 +51,7 @@ public class ComboBoxController {
         String pad;
         if (padding.length > 0) pad = "-fx-padding:" + padding[0] + padding[0] + padding[0] + padding[0] + ";";
         else pad = "-fx-padding: 0px 0px 0px 0px;";
-        comboBox.setOnMouseEntered(event -> comboBox.setButtonCell(new ListCell<String>() {
+        comboBox.setOnMouseEntered(event -> comboBox.setButtonCell(new ListCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 comboBox.setStyle("-fx-background-color: #151f35;" + "-fx-border-color: #0a1229;");
@@ -62,7 +62,7 @@ public class ComboBoxController {
             }
         }));
 
-        comboBox.setOnMouseExited(event -> comboBox.setButtonCell(new ListCell<String>() {
+        comboBox.setOnMouseExited(event -> comboBox.setButtonCell(new ListCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 comboBox.setStyle("-fx-background-color: #1b2942;" + "-fx-border-color: #0a1229;");

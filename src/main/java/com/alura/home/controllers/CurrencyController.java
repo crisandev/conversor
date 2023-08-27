@@ -1,14 +1,13 @@
 package com.alura.home.controllers;
 
 import com.alura.home.converters.Currency;
+import com.alura.home.enums.Languages;
 import com.alura.home.exceptions.IncorrectValueException;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
 import com.alura.home.util.Utilities;
-import javafx.scene.input.KeyEvent;
 
 public class CurrencyController extends ConverterController {
-
     private final Currency currencyConverter = new Currency();
 
     public CurrencyController(MainController mainController) {
@@ -39,17 +38,18 @@ public class CurrencyController extends ConverterController {
 
     @Override
     public void conversionRequest() {
-        String[] currentComboBoxFrom = mc.getCbCurrencies().getSelectionModel().getSelectedItem().split(" ");
-        String[] currentComboBoxTo = mc.getCbCurrenciesChange().getSelectionModel().getSelectedItem().split(" ");
-        String convertFrom = currentComboBoxFrom[0];
-        String convertTo = currentComboBoxTo[0];
-        String amount = mc.getInputCurrency().getText();
+        String currentComboBoxFrom = mc.getCbCurrencies().getSelectionModel().getSelectedItem();
+        String currentComboBoxTo = mc.getCbCurrenciesChange().getSelectionModel().getSelectedItem();
+
 
         try {
-            if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the origin currency to convert.");
-            if (convertTo.equalsIgnoreCase(promptText))
+            if (currentComboBoxFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException("");
+            if (currentComboBoxTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny currency to convert.");
+
+            String convertFrom = currentComboBoxFrom.split(" ")[0];
+            String convertTo = currentComboBoxTo.split(" ")[0];
+            String amount = mc.getInputCurrency().getText();
 
             if (textChangedValidation()) {
                 Double result = currencyConverter.convert(convertFrom, convertTo, amount);
@@ -58,7 +58,8 @@ public class CurrencyController extends ConverterController {
                 mc.getInputCurrencyResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("'Select a currency' is an incorrect value", ex.getMessage());
+            String incorrectValue = Language.getLang() == Languages.ES ? "is an incorrect value" : "es un valor incorrecto";
+            PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }
 }

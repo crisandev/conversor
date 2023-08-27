@@ -1,6 +1,7 @@
 package com.alura.home.controllers;
 
 import com.alura.home.converters.Temperature;
+import com.alura.home.enums.Languages;
 import com.alura.home.exceptions.IncorrectValueException;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
@@ -15,6 +16,8 @@ public class TemperatureController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-temperature");
         this.title = Language.getTitle("title-temperature");
         this.subtitle = Language.getSubTitle("subtitle-temperature");
+        this.originText = Language.getLang() == Languages.ES ? "Select the origin weight to convert." : "Seleccione el peso de origen para convertir.";
+        this.destinyText = Language.getLang() == Languages.ES ? "Select the destiny weight to convert." : "Seleccione el peso de destino para convertir.";
     }
 
     @Override
@@ -44,10 +47,8 @@ public class TemperatureController extends ConverterController {
         String amount = mc.getInputTemperature().getText();
 
         try {
-            if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the origin scale to convert.");
-            if (convertTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the destiny scale to convert.");
+            if (convertFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException(originText);
+            if (convertTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException("");
 
             if (textChangedValidation()) {
                 Double result = temperatureConverter.convert(convertFrom, convertTo, amount);

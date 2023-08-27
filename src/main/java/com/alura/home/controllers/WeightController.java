@@ -15,6 +15,7 @@ public class WeightController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-weight");
         this.title = Language.getTitle("title-weight");
         this.subtitle = Language.getSubTitle("subtitle-weight");
+
     }
 
     @Override
@@ -45,7 +46,7 @@ public class WeightController extends ConverterController {
 
         try {
             if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the origin weight to convert.");
+                throw new IncorrectValueException("");
             if (convertTo.equalsIgnoreCase(promptText))
                 throw new IncorrectValueException("Select the destiny weight to convert.");
 
