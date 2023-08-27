@@ -15,6 +15,8 @@ public class CurrencyController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-currency");
         this.title = Language.getTitle("title-currency");
         this.subtitle = Language.getSubTitle("subtitle-currency");
+        this.originText = Language.getLang() == Languages.ES ? "Seleccione la moneda de origen para convertir." : "Select the origin currency to convert.";
+        this.destinyText = Language.getLang() == Languages.ES ? "Seleccione la moneda de destino para convertir." : "Select the destiny currency to convert.";
     }
 
     @Override
@@ -43,9 +45,8 @@ public class CurrencyController extends ConverterController {
 
 
         try {
-            if (currentComboBoxFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException("");
-            if (currentComboBoxTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("Select the destiny currency to convert.");
+            if (currentComboBoxFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException(originText);
+            if (currentComboBoxTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException(destinyText);
 
             String convertFrom = currentComboBoxFrom.split(" ")[0];
             String convertTo = currentComboBoxTo.split(" ")[0];
@@ -58,7 +59,7 @@ public class CurrencyController extends ConverterController {
                 mc.getInputCurrencyResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            String incorrectValue = Language.getLang() == Languages.ES ? "is an incorrect value" : "es un valor incorrecto";
+            String incorrectValue = Language.getLang() == Languages.ES ? "es un valor incorrecto" : "is an incorrect value";
             PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }

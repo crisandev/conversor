@@ -15,6 +15,8 @@ public class LongitudeController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-longitude");
         this.title = Language.getTitle("title-longitude");
         this.subtitle = Language.getSubTitle("subtitle-longitude");
+        this.originText = Language.getLang() == Languages.ES ? "Seleccione la longitud de origen para convertir." : "Select the origin longitude convert.";
+        this.destinyText = Language.getLang() == Languages.ES ? "Seleccione la longitud de destino para convertir." : "Select the destiny longitude to convert.";
     }
 
     @Override
@@ -25,7 +27,7 @@ public class LongitudeController extends ConverterController {
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbLongitude(), mc.getCbLongitudeChange(), mc.getInputLongitude(), mc.getInputLongitudeResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-longitude"));
+        Utilities.reset(mc.getCbLongitude(), mc.getCbLongitudeChange(), mc.getInputLongitude(), mc.getInputLongitudeResult(), mc.getLblValidationMessage(), promptText);
         mc.getBtnConvertLongitude().setDisable(true);
         mc.getSubtitle().setText(subtitle);
         mc.getTitleConversor().setText(title);
@@ -44,10 +46,8 @@ public class LongitudeController extends ConverterController {
         String amount = mc.getInputLongitude().getText();
 
         try {
-            if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("");
-            if (convertTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException(".");
+            if (convertFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException(originText);
+            if (convertTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException(destinyText);
 
             if (textChangedValidation()) {
                 Double result = longitudeController.convert(convertFrom, convertTo, amount);
@@ -56,7 +56,7 @@ public class LongitudeController extends ConverterController {
                 mc.getInputLongitudeResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            String incorrectValue = Language.getLang() == Languages.ES ? "is an incorrect value" : "es un valor incorrecto";
+            String incorrectValue = Language.getLang() == Languages.ES ? "es un valor incorrecto" : "is an incorrect value";
             PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }

@@ -16,8 +16,8 @@ public class TemperatureController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-temperature");
         this.title = Language.getTitle("title-temperature");
         this.subtitle = Language.getSubTitle("subtitle-temperature");
-        this.originText = Language.getLang() == Languages.ES ? "Select the origin weight to convert." : "Seleccione el peso de origen para convertir.";
-        this.destinyText = Language.getLang() == Languages.ES ? "Select the destiny weight to convert." : "Seleccione el peso de destino para convertir.";
+        this.originText = Language.getLang() == Languages.ES ? "Seleccione la escala de origen para convertir." : "Select the origin scale to convert.";
+        this.destinyText = Language.getLang() == Languages.ES ? "Seleccione la escala de destino para convertir." : "Select the destiny scale to convert.";
     }
 
     @Override
@@ -28,7 +28,7 @@ public class TemperatureController extends ConverterController {
 
     @Override
     public void reset() {
-        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getLblValidationMessage(), Language.getComboBoxPrompt("prompt-text-temperature"));
+        Utilities.reset(mc.getCbTemperature(), mc.getCbTemperatureChange(), mc.getInputTemperature(), mc.getInputTemperatureResult(), mc.getLblValidationMessage(), promptText);
         mc.getBtnConvertTemperature().setDisable(true);
         mc.getSubtitle().setText(subtitle);
         mc.getTitleConversor().setText(title);
@@ -48,7 +48,7 @@ public class TemperatureController extends ConverterController {
 
         try {
             if (convertFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException(originText);
-            if (convertTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException("");
+            if (convertTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException(destinyText);
 
             if (textChangedValidation()) {
                 Double result = temperatureConverter.convert(convertFrom, convertTo, amount);
@@ -57,7 +57,8 @@ public class TemperatureController extends ConverterController {
                 mc.getInputTemperatureResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("'Select a scale' is an incorrect value", ex.getMessage());
+            String incorrectValue = Language.getLang() == Languages.ES ? "es un valor incorrecto" : "is an incorrect value";
+            PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }
 }

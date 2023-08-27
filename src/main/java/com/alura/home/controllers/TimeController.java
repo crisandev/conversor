@@ -1,6 +1,7 @@
 package com.alura.home.controllers;
 
 import com.alura.home.converters.Time;
+import com.alura.home.enums.Languages;
 import com.alura.home.exceptions.IncorrectValueException;
 import com.alura.home.language.Language;
 import com.alura.home.util.PopupWindow;
@@ -15,6 +16,8 @@ public class TimeController extends ConverterController {
         this.promptText = Language.getComboBoxPrompt("prompt-text-time");
         this.title = Language.getTitle("title-time");
         this.subtitle = Language.getSubTitle("subtitle-time");
+        this.originText = Language.getLang() == Languages.ES ? "Seleccione el tiempo de origen para convertir." : "Select the origin time to convert.";
+        this.destinyText = Language.getLang() == Languages.ES ? "Seleccione el tiempo de destino para convertir." : "Select the destiny time to convert.";
     }
 
     @Override
@@ -45,10 +48,8 @@ public class TimeController extends ConverterController {
         String amount = mc.getInputTime().getText();
 
         try {
-            if (convertFrom.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("");
-            if (convertTo.equalsIgnoreCase(promptText))
-                throw new IncorrectValueException("");
+            if (convertFrom.equalsIgnoreCase(promptText)) throw new IncorrectValueException(originText);
+            if (convertTo.equalsIgnoreCase(promptText)) throw new IncorrectValueException(destinyText);
 
             if (textChangedValidation()) {
                 Double result = timeController.convert(convertFrom, convertTo, amount);
@@ -57,7 +58,8 @@ public class TimeController extends ConverterController {
                 mc.getInputTimeResult().setText("0.0");
             }
         } catch (IncorrectValueException ex) {
-            PopupWindow.alertMessage("'Select a time' is an incorrect value", ex.getMessage());
+            String incorrectValue = Language.getLang() == Languages.ES ? "es un valor incorrecto" : "is an incorrect value";
+            PopupWindow.alertMessage("'" + promptText + "' " + incorrectValue, ex.getMessage());
         }
     }
 }
