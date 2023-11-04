@@ -10,8 +10,10 @@ import java.nio.file.Path;
 
 public class LongitudeAPI implements ApiJSONFiles {
 
-    private static final String JSON_LONGITUDE_URL_EN = "src/main/resources/json-files/longitude-list-en.json";
-    private static final String JSON_LONGITUDE_URL_ES = "src/main/resources/json-files/longitude-list-es.json";
+    private static final String JSON_LONGITUDE_URL_EN = Utilities.getPath("longitude-list-en.json");
+//    private static final String JSON_LONGITUDE_URL_EN = "src/main/resources/json-files/longitude-list-en.json";
+    private static final String JSON_LONGITUDE_URL_ES = Utilities.getPath("longitude-list-es.json");
+//    private static final String JSON_LONGITUDE_URL_ES = "src/main/resources/json-files/longitude-list-es.json";
 
 
     @Override

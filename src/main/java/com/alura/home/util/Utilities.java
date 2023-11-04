@@ -1,5 +1,6 @@
 package com.alura.home.util;
 
+import com.alura.home.Main;
 import com.alura.home.interfaces.ApiJSONFiles;
 import com.alura.home.language.Language;
 import javafx.scene.control.Button;
@@ -8,6 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.text.NumberFormat;
 import java.util.*;
 
@@ -109,5 +115,20 @@ public class Utilities {
         list.add("English");
         list.add("Español");
         return list;
+    }
+
+    public static String getPath(String fileName) {
+        String JS = null;
+        try {
+            JS = Main.class.getResource(fileName).toURI().getPath();
+            URI s =  Main.class.getResource(fileName).toURI();
+            System.out.println(s);
+            System.out.println(JS);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(JS);
+        String file = new File(JS).getPath();
+        return file;
     }
 }

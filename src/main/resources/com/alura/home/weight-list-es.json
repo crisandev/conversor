@@ -1,0 +1,238 @@
+{
+  "units": [
+    {
+      "name": "Kilogramo",
+      "symbol": "kg",
+      "conversions": {
+        "Gramo": 1000,
+        "Miligramo": 1000000,
+        "Microgramo": 1000000000,
+        "Tonelada Métrica": 0.001,
+        "Tonelada Larga": 0.000984207,
+        "Tonelada Corta": 0.00110231,
+        "Libra": 2.20462,
+        "Onza": 35.27396,
+        "Stone": 0.157473,
+        "Quilate": 5000,
+        "Grano": 15432.4,
+        "Onza Troy": 32.1507
+      }
+    },
+    {
+      "name": "Gramo",
+      "symbol": "g",
+      "conversions": {
+        "Kilogramo": 0.001,
+        "Miligramo": 1000,
+        "Microgramo": 1000000,
+        "Tonelada Métrica": 0.000001,
+        "Tonelada Larga": 9.8421e-7,
+        "Tonelada Corta": 1.1023e-6,
+        "Libra": 0.00220462,
+        "Onza": 0.03527396,
+        "Stone": 0.000157473,
+        "Quilate": 5,
+        "Grano": 15.4324,
+        "Onza Troy": 0.0321507
+      }
+    },
+    {
+      "name": "Miligramo",
+      "symbol": "mg",
+      "conversions": {
+        "Kilogramo": 0.000001,
+        "Gramo": 0.001,
+        "Microgramo": 1000,
+        "Tonelada Métrica": 1e-9,
+        "Tonelada Larga": 9.8421e-10,
+        "Tonelada Corta": 1.1023e-9,
+        "Libra": 2.2046e-6,
+        "Onza": 3.5274e-5,
+        "Stone": 1.5747e-7,
+        "Quilate": 0.005,
+        "Grano": 0.0154324,
+        "Onza Troy": 3.2151e-5
+      }
+    },
+    {
+      "name": "Microgramo",
+      "symbol": "µg",
+      "conversions": {
+        "Kilogramo": 1e-9,
+        "Gramo": 1e-6,
+        "Miligramo": 0.001,
+        "Tonelada Métrica": 1e-12,
+        "Tonelada Larga": 9.8421e-13,
+        "Tonelada Corta": 1.1023e-12,
+        "Libra": 2.2046e-9,
+        "Onza": 3.5274e-8,
+        "Stone": 1.5747e-10,
+        "Quilate": 5e-6,
+        "Grano": 0.0000154324,
+        "Onza Troy": 3.2151e-8
+      }
+    },
+    {
+      "name": "Tonelada Métrica",
+      "symbol": "tonelada",
+      "conversions": {
+        "Kilogramo": 1000,
+        "Gramo": 1000000,
+        "Miligramo": 1000000000,
+        "Microgramo": 1000000000000,
+        "Tonelada Larga": 0.984207,
+        "Tonelada Corta": 1.10231,
+        "Libra": 2204.62,
+        "Onza": 35273.96,
+        "Stone": 157.473,
+        "Quilate": 5000000,
+        "Grano": 15432400,
+        "Onza Troy": 32150.7
+      }
+    },
+    {
+      "name": "Tonelada Larga",
+      "symbol": "tonelada imperial",
+      "conversions": {
+        "Kilogramo": 1016.05,
+        "Gramo": 1016046,
+        "Miligramo": 1016046900,
+        "Microgramo": 1.016e+12,
+        "Tonelada Métrica": 1.01605,
+        "Tonelada Corta": 1.12,
+        "Libra": 2240,
+        "Onza": 35840,
+        "Stone": 160,
+        "Quilate": 5080235,
+        "Grano": 156800000,
+        "Onza Troy": 327428
+      }
+    },
+    {
+      "name": "Tonelada Corta",
+      "symbol": "tonelada corta",
+      "conversions": {
+        "Kilogramo": 907.185,
+        "Gramo": 907185,
+        "Miligramo": 907185000,
+        "Microgramo": 907185000000,
+        "Tonelada Métrica": 0.907185,
+        "Tonelada Larga": 0.892857,
+        "Libra": 2000,
+        "Onza": 32000,
+        "Stone": 142.857,
+        "Quilate": 4535924,
+        "Grano": 140000000,
+        "Onza Troy": 291667
+      }
+    },
+    {
+      "name": "Libra",
+      "symbol": "lb",
+      "conversions": {
+        "Kilogramo": 0.453592,
+        "Gramo": 453.592,
+        "Miligramo": 453592,
+        "Microgramo": 453592000,
+        "Tonelada Métrica": 0.000453592,
+        "Tonelada Larga": 0.000446429,
+        "Tonelada Corta": 0.0005,
+        "Onza": 16,
+        "Stone": 0.0714286,
+        "Quilate": 2267.96,
+        "Grano": 7000,
+        "Onza Troy": 14.5833
+      }
+    },
+    {
+      "name": "Onza",
+      "symbol": "oz",
+      "conversions": {
+        "Kilogramo": 0.0283495,
+        "Gramo": 28.3495,
+        "Miligramo": 28349.5,
+        "Microgramo": 28349500,
+        "Tonelada Métrica": 0.0000283495,
+        "Tonelada Larga": 0.0000279018,
+        "Tonelada Corta": 0.00003125,
+        "Libra": 0.0625,
+        "Stone": 0.00446429,
+        "Quilate": 141.7475,
+        "Grano": 437.5,
+        "Onza Troy": 0.911458
+      }
+    },
+    {
+      "name": "Stone",
+      "symbol": "st",
+      "conversions": {
+        "Kilogramo": 6.35029,
+        "Gramo": 6350.29,
+        "Miligramo": 6350290,
+        "Microgramo": 6350290000,
+        "Tonelada Métrica": 0.00635029,
+        "Tonelada Larga": 0.00625,
+        "Tonelada Corta": 0.007,
+        "Libra": 14,
+        "Onza": 224,
+        "Quilate": 31751.5,
+        "Grano": 98000,
+        "Onza Troy": 204.167
+      }
+    },
+    {
+      "name": "Quilate",
+      "symbol": "ct",
+      "conversions": {
+        "Kilogramo": 0.0002,
+        "Gramo": 0.2,
+        "Miligramo": 200,
+        "Microgramo": 200000,
+        "Tonelada Métrica": 2e-7,
+        "Tonelada Larga": 1.96864e-7,
+        "Tonelada Corta": 2.20462e-7,
+        "Libra": 0.000440925,
+        "Onza": 0.00705479,
+        "Stone": 0.000031498,
+        "Grano": 3.08647,
+        "Onza Troy": 0.00643015
+      }
+    },
+    {
+      "name": "Grano",
+      "symbol": "gr",
+      "conversions": {
+        "Kilogramo": 0.0000647989,
+        "Gramo": 0.0647989,
+        "Miligramo": 64.7989,
+        "Microgramo": 64798.9,
+        "Tonelada Métrica": 6.47989e-8,
+        "Tonelada Larga": 6.37755e-8,
+        "Tonelada Corta": 7.14286e-8,
+        "Libra": 0.000142857,
+        "Onza": 0.00228571,
+        "Stone": 0.0000102041,
+        "Quilate": 0.324675,
+        "Onza Troy": 0.00208333
+      }
+    },
+    {
+      "name": "Onza Troy",
+      "symbol": "ozt",
+      "conversions": {
+        "Kilogramo": 0.0311035,
+        "Gramo": 31.1035,
+        "Miligramo": 31103.5,
+        "Microgramo": 31103500,
+        "Tonelada Métrica": 0.0000311035,
+        "Tonelada Larga": 0.0000308592,
+        "Tonelada Corta": 0.000034375,
+        "Libra": 0.0685714,
+        "Onza": 1.09714,
+        "Stone": 0.00489795,
+        "Quilate": 155.52,
+        "Onza Troy": 0.911458
+      }
+    }
+  ]
+}

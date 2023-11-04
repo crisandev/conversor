@@ -28,6 +28,7 @@ public class MainController extends Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cbLanguages();
         initControllers();
+        btnSelected();
     }
 
     private void initControllers() {

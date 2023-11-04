@@ -11,8 +11,10 @@ import java.nio.file.Path;
 
 public class WeightAPI implements ApiJSONFiles {
 
-    private static final String JSON_WEIGHT_URL_EN = "src/main/resources/json-files/weight-list-en.json";
-    private static final String JSON_WEIGHT_URL_ES = "src/main/resources/json-files/weight-list-es.json";
+    private static final String JSON_WEIGHT_URL_EN = Utilities.getPath("weight-list-en.json");
+//    private static final String JSON_WEIGHT_URL_EN = "src/main/resources/json-files/weight-list-en.json";
+    private static final String JSON_WEIGHT_URL_ES = Utilities.getPath("weight-list-es.json");
+//    private static final String JSON_WEIGHT_URL_ES = "src/main/resources/json-files/weight-list-es.json";
 
 
     @Override

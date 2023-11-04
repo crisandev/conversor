@@ -1,0 +1,238 @@
+{
+  "units": [
+    {
+      "name": "Kilogram",
+      "symbol": "kg",
+      "conversions": {
+        "Gram": 1000,
+        "Milligram": 1000000,
+        "Microgram": 1000000000,
+        "Metric Ton": 0.001,
+        "Long Ton": 0.000984207,
+        "Short Ton": 0.00110231,
+        "Pound": 2.20462,
+        "Ounce": 35.27396,
+        "Stone": 0.157473,
+        "Carat": 5000,
+        "Grain": 15432.4,
+        "Troy Ounce": 32.1507
+      }
+    },
+    {
+      "name": "Gram",
+      "symbol": "g",
+      "conversions": {
+        "Kilogram": 0.001,
+        "Milligram": 1000,
+        "Microgram": 1000000,
+        "Metric Ton": 0.000001,
+        "Long Ton": 9.8421e-7,
+        "Short Ton": 1.1023e-6,
+        "Pound": 0.00220462,
+        "Ounce": 0.03527396,
+        "Stone": 0.000157473,
+        "Carat": 5,
+        "Grain": 15.4324,
+        "Troy Ounce": 0.0321507
+      }
+    },
+    {
+      "name": "Milligram",
+      "symbol": "mg",
+      "conversions": {
+        "Kilogram": 0.000001,
+        "Gram": 0.001,
+        "Microgram": 1000,
+        "Metric Ton": 1e-9,
+        "Long Ton": 9.8421e-10,
+        "Short Ton": 1.1023e-9,
+        "Pound": 2.2046e-6,
+        "Ounce": 3.5274e-5,
+        "Stone": 1.5747e-7,
+        "Carat": 0.005,
+        "Grain": 0.0154324,
+        "Troy Ounce": 3.2151e-5
+      }
+    },
+    {
+      "name": "Microgram",
+      "symbol": "µg",
+      "conversions": {
+        "Kilogram": 1e-9,
+        "Gram": 1e-6,
+        "Milligram": 0.001,
+        "Metric Ton": 1e-12,
+        "Long Ton": 9.8421e-13,
+        "Short Ton": 1.1023e-12,
+        "Pound": 2.2046e-9,
+        "Ounce": 3.5274e-8,
+        "Stone": 1.5747e-10,
+        "Carat": 5e-6,
+        "Grain": 0.0000154324,
+        "Troy Ounce": 3.2151e-8
+      }
+    },
+    {
+      "name": "Metric Ton",
+      "symbol": "tonne",
+      "conversions": {
+        "Kilogram": 1000,
+        "Gram": 1000000,
+        "Milligram": 1000000000,
+        "Microgram": 1000000000000,
+        "Long Ton": 0.984207,
+        "Short Ton": 1.10231,
+        "Pound": 2204.62,
+        "Ounce": 35273.96,
+        "Stone": 157.473,
+        "Carat": 5000000,
+        "Grain": 15432400,
+        "Troy Ounce": 32150.7
+      }
+    },
+    {
+      "name": "Long Ton",
+      "symbol": "imperial ton",
+      "conversions": {
+        "Kilogram": 1016.05,
+        "Gram": 1016046,
+        "Milligram": 1016046900,
+        "Microgram": 1.016e+12,
+        "Metric Ton": 1.01605,
+        "Short Ton": 1.12,
+        "Pound": 2240,
+        "Ounce": 35840,
+        "Stone": 160,
+        "Carat": 5080235,
+        "Grain": 156800000,
+        "Troy Ounce": 327428
+      }
+    },
+    {
+      "name": "Short Ton",
+      "symbol": "short ton",
+      "conversions": {
+        "Kilogram": 907.185,
+        "Gram": 907185,
+        "Milligram": 907185000,
+        "Microgram": 907185000000,
+        "Metric Ton": 0.907185,
+        "Long Ton": 0.892857,
+        "Pound": 2000,
+        "Ounce": 32000,
+        "Stone": 142.857,
+        "Carat": 4535924,
+        "Grain": 140000000,
+        "Troy Ounce": 291667
+      }
+    },
+    {
+      "name": "Pound",
+      "symbol": "lb",
+      "conversions": {
+        "Kilogram": 0.453592,
+        "Gram": 453.592,
+        "Milligram": 453592,
+        "Microgram": 453592000,
+        "Metric Ton": 0.000453592,
+        "Long Ton": 0.000446429,
+        "Short Ton": 0.0005,
+        "Ounce": 16,
+        "Stone": 0.0714286,
+        "Carat": 2267.96,
+        "Grain": 7000,
+        "Troy Ounce": 14.5833
+      }
+    },
+    {
+      "name": "Ounce",
+      "symbol": "oz",
+      "conversions": {
+        "Kilogram": 0.0283495,
+        "Gram": 28.3495,
+        "Milligram": 28349.5,
+        "Microgram": 28349500,
+        "Metric Ton": 0.0000283495,
+        "Long Ton": 0.0000279018,
+        "Short Ton": 0.00003125,
+        "Pound": 0.0625,
+        "Stone": 0.00446429,
+        "Carat": 141.7475,
+        "Grain": 437.5,
+        "Troy Ounce": 0.911458
+      }
+    },
+    {
+      "name": "Stone",
+      "symbol": "st",
+      "conversions": {
+        "Kilogram": 6.35029,
+        "Gram": 6350.29,
+        "Milligram": 6350290,
+        "Microgram": 6350290000,
+        "Metric Ton": 0.00635029,
+        "Long Ton": 0.00625,
+        "Short Ton": 0.007,
+        "Pound": 14,
+        "Ounce": 224,
+        "Carat": 31751.5,
+        "Grain": 98000,
+        "Troy Ounce": 204.167
+      }
+    },
+    {
+      "name": "Carat",
+      "symbol": "ct",
+      "conversions": {
+        "Kilogram": 0.0002,
+        "Gram": 0.2,
+        "Milligram": 200,
+        "Microgram": 200000,
+        "Metric Ton": 2e-7,
+        "Long Ton": 1.96864e-7,
+        "Short Ton": 2.20462e-7,
+        "Pound": 0.000440925,
+        "Ounce": 0.00705479,
+        "Stone": 0.000031498,
+        "Grain": 3.08647,
+        "Troy Ounce": 0.00643015
+      }
+    },
+    {
+      "name": "Grain",
+      "symbol": "gr",
+      "conversions": {
+        "Kilogram": 0.0000647989,
+        "Gram": 0.0647989,
+        "Milligram": 64.7989,
+        "Microgram": 64798.9,
+        "Metric Ton": 6.47989e-8,
+        "Long Ton": 6.37755e-8,
+        "Short Ton": 7.14286e-8,
+        "Pound": 0.000142857,
+        "Ounce": 0.00228571,
+        "Stone": 0.0000102041,
+        "Carat": 0.324675,
+        "Troy Ounce": 0.00208333
+      }
+    },
+    {
+      "name": "Troy Ounce",
+      "symbol": "ozt",
+      "conversions": {
+        "Kilogram": 0.0311035,
+        "Gram": 31.1035,
+        "Milligram": 31103.5,
+        "Microgram": 31103500,
+        "Metric Ton": 0.0000311035,
+        "Long Ton": 0.0000308592,
+        "Short Ton": 0.000034375,
+        "Pound": 0.0685714,
+        "Ounce": 1.09714,
+        "Stone": 0.00489795,
+        "Carat": 155.52,
+        "Grain": 480
+      }
+    }
+  ]
+}
